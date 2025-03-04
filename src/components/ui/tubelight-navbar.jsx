@@ -2,10 +2,18 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "../../lib/utils";
+import { HomeIcon, CodeIcon, FolderIcon } from "lucide-react"; // Removed MailIcon
 
-export function NavBar({ items, className }) {
-  const [activeTab, setActiveTab] = useState(items[0].name);
+export function NavBar() {
+  const [activeTab, setActiveTab] = useState('Home'); // Changed default to 'Home'
   const [isMobile, setIsMobile] = useState(false);
+
+  const items = [
+    { name: "Home", url: "#home", icon: HomeIcon },
+    { name: "Skills", url: "#skills", icon: CodeIcon },
+    { name: "Projects", url: "#projects", icon: FolderIcon }
+    // Removed Contact item
+  ];
 
   useEffect(() => {
     const handleResize = () => {
@@ -17,26 +25,25 @@ export function NavBar({ items, className }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const handleClick = (name, url) => {
+    setActiveTab(name);
+    const element = document.getElementById(name.toLowerCase());
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div
-      className={cn(
-        "fixed top-0 left-1/2 -translate-x-1/2 z-[100] mt-8",
-        className,
-      )}
-    >
+    <div className="fixed top-0 left-1/2 -translate-x-1/2 z-[100] mt-8">
       <div className="flex items-center gap-3 bg-background/5 border border-blue-200 dark:border-blue-800 backdrop-blur-lg py-2 px-2 rounded-full shadow-lg">
         {items.map((item) => {
           const Icon = item.icon;
           const isActive = activeTab === item.name;
 
           return (
-            <a
+            <button
               key={item.name}
-              href={item.url}
-              onClick={(e) => {
-                e.preventDefault();
-                setActiveTab(item.name);
-              }}
+              onClick={() => handleClick(item.name, item.url)}
               className={cn(
                 "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
                 "text-blue-900 dark:text-blue-100 hover:text-blue-800 dark:hover:text-blue-200",
@@ -69,10 +76,13 @@ export function NavBar({ items, className }) {
                   </div>
                 </motion.div>
               )}
-            </a>
+            </button>
           );
         })}
       </div>
     </div>
   );
-} 
+}
+
+// Add a named export for backward compatibility
+export const TubelightNavbar = NavBar;

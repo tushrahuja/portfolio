@@ -1,4 +1,5 @@
 "use client";
+import { TubelightNavbar } from "./tubelight-navbar";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import { AuroraBackground } from "./aurora-background";
@@ -34,6 +35,7 @@ import {
 } from "react-icons/bs";
 import { GiPuzzle } from "react-icons/gi";
 import { SkillsCarousel } from "./3d-carousel";
+import { Footer } from "./footer";
 
 export function AuroraBackgroundDemo() {
   const [text, setText] = useState("");
@@ -106,6 +108,13 @@ export function AuroraBackgroundDemo() {
 
   const handleProjectClick = (index) => {
     setCurrentProject(index);
+  };
+
+  const jumpToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView();
+    }
   };
 
   const skillSections = {
@@ -237,10 +246,12 @@ export function AuroraBackgroundDemo() {
   return (
     <div className="relative min-h-screen w-full bg-white dark:bg-black">
       <AuroraBackground className="fixed inset-0 z-0" />
-      <div className="relative z-10 w-full">
+      <TubelightNavbar />
+      <div className="relative z-10 w-full pt-16"> {/* Added pt-16 for navbar spacing */}
         <div className="max-w-[90%] mx-auto px-6">
           {/* Hero Section */}
           <motion.div
+            id="home"
             initial={{ opacity: 0.0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
@@ -264,6 +275,7 @@ export function AuroraBackgroundDemo() {
               <div className="flex items-center mt-4 space-x-4">
                 <InteractiveHoverButton 
                   text="Get in touch"
+                  onClick={() => jumpToSection('contact')}
                   className="text-blue-900 dark:text-blue-100 border-blue-200 dark:border-blue-800 text-lg font-semibold w-48 backdrop-blur-sm hover:bg-blue-50 dark:hover:bg-blue-900/20"
                 />
                 <InteractiveHoverButton 
@@ -276,6 +288,7 @@ export function AuroraBackgroundDemo() {
 
           {/* Tools & Skills Section */}
           <motion.div
+            id="skills"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -297,8 +310,9 @@ export function AuroraBackgroundDemo() {
             </div>
           </motion.div>
 
-          {/* Showcase Section */}
+          {/* Projects Section */}
           <motion.div
+            id="projects"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -433,7 +447,7 @@ export function AuroraBackgroundDemo() {
           </motion.div>
 
           {/* Contact Section */}
-          <div id="contact" className="relative min-h-screen w-full py-16">
+          <div id="contact" className="relative w-full py-32"> {/* Changed min-h-screen to py-32 */}
             <div className="relative z-10 max-w-7xl mx-auto px-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 {/* Left Side (Contact Info) */}
@@ -478,6 +492,8 @@ export function AuroraBackgroundDemo() {
               </div>
             </div>
           </div>
+
+          <Footer />
         </div>
       </div>
     </div>
