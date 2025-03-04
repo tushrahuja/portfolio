@@ -261,9 +261,13 @@ export function AuroraBackgroundDemo() {
               <p className="text-xl md:text-2xl text-blue-700 dark:text-blue-300 max-w-3xl mt-4 mb-4">
                 Hi, I'm Tushar Ahuja. A passionate developer who loves to build things for the web. I enjoy turning complex problems into simple, beautiful and intuitive solutions.
               </p>
-              <div className="flex items-center mt-4">
+              <div className="flex items-center mt-4 space-x-4">
                 <InteractiveHoverButton 
                   text="Get in touch"
+                  className="text-blue-900 dark:text-blue-100 border-blue-200 dark:border-blue-800 text-lg font-semibold w-48 backdrop-blur-sm hover:bg-blue-50 dark:hover:bg-blue-900/20"
+                />
+                <InteractiveHoverButton 
+                  text="Get Resume"
                   className="text-blue-900 dark:text-blue-100 border-blue-200 dark:border-blue-800 text-lg font-semibold w-48 backdrop-blur-sm hover:bg-blue-50 dark:hover:bg-blue-900/20"
                 />
               </div>

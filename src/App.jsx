@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="relative w-full min-h-screen bg-white dark:bg-black">
-      <AuroraBackground className="fixed inset-0 z-0" />
+      <AuroraBackground />
       <div className="relative z-10">
         <NavBar items={navItems} />
         <ThemeToggle />
