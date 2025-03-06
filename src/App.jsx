@@ -6,10 +6,12 @@ import { AuroraBackground } from "./components/ui/aurora-background.jsx";
 
 function App() {
   const navItems = [
-    { name: 'Home', url: '#', icon: Home },
-    { name: 'About', url: '#', icon: User },
-    { name: 'Projects', url: '#', icon: Briefcase }
+    { name: 'Home', url: '#home', icon: Home },
+    { name: 'About', url: '#about', icon: User },
+    { name: 'Projects', url: '#projects', icon: Briefcase }
   ];
+
+  console.log("Rendering App");
 
   return (
     <div className="relative w-full min-h-screen bg-white dark:bg-black">

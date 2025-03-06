@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "../../lib/utils";
-import { HomeIcon, CodeIcon, FolderIcon } from "lucide-react"; // Removed MailIcon
+import { HomeIcon, CodeIcon, FolderIcon, UserIcon } from "lucide-react"; // Added UserIcon
 
 export function NavBar() {
   const [activeTab, setActiveTab] = useState("Home"); // Changed default to 'Home'
@@ -10,7 +10,7 @@ export function NavBar() {
 
   const items = [
     { name: "Home", url: "#home", icon: HomeIcon },
-    { name: "Skills", url: "#skills", icon: CodeIcon },
+    { name: "About", url: "#about", icon: UserIcon }, // Replaced Skills with About
     { name: "Projects", url: "#projects", icon: FolderIcon },
     // Removed Contact item
   ];
@@ -29,13 +29,15 @@ export function NavBar() {
     setActiveTab(name);
     const element = document.getElementById(name.toLowerCase());
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const yOffset = -80; // Adjust this value to align the section properly
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
   return (
-    <div className="fixed top-0 left-1/2 -translate-x-1/2 z-[100] mt-8">
-      <div className="flex items-center gap-3 bg-background/5 border border-blue-200 dark:border-blue-800 backdrop-blur-lg py-2 px-2 rounded-full shadow-lg">
+    <div className="fixed top-2 right-8 z-[100] mt-8">
+      <div className="relative flex items-center gap-3 bg-background/5 border border-blue-200 dark:border-blue-800 backdrop-blur-lg py-2 px-2 rounded-full shadow-lg">
         {items.map((item) => {
           const Icon = item.icon;
           const isActive = activeTab === item.name;
@@ -60,7 +62,7 @@ export function NavBar() {
               </span>
               {isActive && (
                 <motion.div
-                  layoutId="lamp"
+                  layoutId={`lamp-${item.name}`} // Ensure unique layoutId for each item
                   className="absolute inset-0 w-full bg-blue-500/5 dark:bg-blue-400/5 rounded-full -z-10"
                   initial={false}
                   transition={{

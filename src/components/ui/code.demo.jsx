@@ -261,7 +261,7 @@ export function AuroraBackgroundDemo() {
               duration: 0.8,
               ease: "easeInOut",
             }}
-            className="flex flex-col gap-8 pt-32"
+            className="flex flex-col gap-8 pt-16" // Changed pt-32 to pt-16
           >
             <div className="flex flex-col gap-6">
               <h1 className="text-[6rem] md:text-[7.5rem] font-bold tracking-tight leading-none -ml-3 text-blue-900 dark:text-blue-100 mb-4">
@@ -288,8 +288,15 @@ export function AuroraBackgroundDemo() {
             </div>
           </motion.div>
 
-          {/* About Section */}
-          <AboutContent />
+          <motion.div
+            id="about" // Changed id to about
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="pt-20" // Reduced padding-top from 40 to 20
+          >
+            <AboutContent />
+          </motion.div>
 
           {/* Tools & Skills Section */}
           <motion.div
@@ -297,7 +304,7 @@ export function AuroraBackgroundDemo() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="pt-40"
+            className="pt-20" // Reduced padding-top from 40 to 20
           >
             <div className="w-full">
               <h2 className="text-5xl md:text-6xl font-bold text-blue-900 dark:text-blue-100 mb-5">
