@@ -1,4 +1,3 @@
-"use client";
 import { AuroraBackgroundDemo } from "./components/ui/code.demo.jsx";
 import { NavBar } from "./components/ui/tubelight-navbar.jsx";
 import { ThemeToggle } from "./components/ui/theme-toggle.jsx";
@@ -23,5 +22,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

@@ -36,6 +36,8 @@ import {
 import { GiPuzzle } from "react-icons/gi";
 import { SkillsCarousel } from "./3d-carousel";
 import { Footer } from "./footer";
+import { HomeIcon, UserIcon, CodeIcon, FolderIcon } from "lucide-react";
+import AboutContent from "./AboutContent";
 
 export function AuroraBackgroundDemo() {
   const [text, setText] = useState("");
@@ -285,6 +287,9 @@ export function AuroraBackgroundDemo() {
               </div>
             </div>
           </motion.div>
+
+          {/* About Section */}
+          <AboutContent />
 
           {/* Tools & Skills Section */}
           <motion.div

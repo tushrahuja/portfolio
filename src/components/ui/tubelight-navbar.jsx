@@ -5,13 +5,13 @@ import { cn } from "../../lib/utils";
 import { HomeIcon, CodeIcon, FolderIcon } from "lucide-react"; // Removed MailIcon
 
 export function NavBar() {
-  const [activeTab, setActiveTab] = useState('Home'); // Changed default to 'Home'
+  const [activeTab, setActiveTab] = useState("Home"); // Changed default to 'Home'
   const [isMobile, setIsMobile] = useState(false);
 
   const items = [
     { name: "Home", url: "#home", icon: HomeIcon },
     { name: "Skills", url: "#skills", icon: CodeIcon },
-    { name: "Projects", url: "#projects", icon: FolderIcon }
+    { name: "Projects", url: "#projects", icon: FolderIcon },
     // Removed Contact item
   ];
 
@@ -29,7 +29,7 @@ export function NavBar() {
     setActiveTab(name);
     const element = document.getElementById(name.toLowerCase());
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -52,10 +52,10 @@ export function NavBar() {
             >
               <span className="hidden md:inline">{item.name}</span>
               <span className="md:hidden">
-                <Icon 
-                  size={18} 
+                <Icon
+                  size={18}
                   strokeWidth={2.5}
-                  className="text-blue-900 dark:text-blue-100" 
+                  className="text-blue-900 dark:text-blue-100"
                 />
               </span>
               {isActive && (
