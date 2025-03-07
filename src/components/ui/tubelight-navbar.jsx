@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "../../lib/utils";
-import { HomeIcon, CodeIcon, FolderIcon, UserIcon } from "lucide-react"; // Added UserIcon
+import { HomeIcon, FolderIcon, UserIcon } from "lucide-react"; // Added UserIcon
 
 export function NavBar() {
   const [activeTab, setActiveTab] = useState("Home"); // Changed default to 'Home'
