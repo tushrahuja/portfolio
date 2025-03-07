@@ -20,7 +20,7 @@ const Projects = () => {
   return (
     <motion.div
       id="projects"
-      className="pt-20 py-32"
+      className="pt-9 py-32" // Reduced padding-top
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}

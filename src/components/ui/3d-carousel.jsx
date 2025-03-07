@@ -8,6 +8,7 @@ import {
   useMotionValue,
   useTransform,
 } from "framer-motion"
+import { ArrowLeft, ArrowRight } from "lucide-react"
 
 export const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect
@@ -32,10 +33,10 @@ const transitionOverlay = { duration: 0.5, ease: [0.32, 0.72, 0, 1] }
 
 const SkillCard = ({ title, items }) => (
   <motion.div
-    className="bg-blue-50/90 dark:bg-[#0A1021]/90 backdrop-blur-sm rounded-xl p-12 border border-blue-200 dark:border-[#1E293B] hover:border-blue-400 dark:hover:border-[#3B82F6] transition-colors duration-200 w-[1000px]"
+    className="bg-blue-50/90 dark:bg-[#0A1021]/90 backdrop-blur-sm rounded-xl p-8 border border-blue-200 dark:border-[#1E293B] hover:border-blue-400 dark:hover:border-[#3B82F6] transition-colors duration-200 w-[800px]"
     whileHover={{ scale: 1.02 }}
   >
-    <h3 className="text-5xl font-bold text-blue-900 dark:text-white mb-10 border-b border-blue-200 dark:border-[#1E293B] pb-4">
+    <h3 className="text-4xl font-bold text-blue-900 dark:text-white mb-8 border-b border-blue-200 dark:border-[#1E293B] pb-4">
       {title}
     </h3>
     <div className="flex flex-wrap gap-5">
@@ -113,6 +114,20 @@ const Carousel = memo(
       }
     };
 
+    const handleLeftClick = () => {
+      handleInteractionStart();
+      setDirection(-1);
+      setCurrentIndex((prev) => (prev === 0 ? sections.length - 1 : prev - 1));
+      handleInteractionEnd();
+    };
+
+    const handleRightClick = () => {
+      handleInteractionStart();
+      setDirection(1);
+      setCurrentIndex((prev) => (prev === sections.length - 1 ? 0 : prev + 1));
+      handleInteractionEnd();
+    };
+
     return (
       <div 
         className="flex h-full items-center justify-center overflow-hidden"
@@ -121,7 +136,13 @@ const Carousel = memo(
         onTouchStart={handleInteractionStart}
         onTouchEnd={handleInteractionEnd}
       >
-        <div className="relative w-[1000px] h-[600px]">
+        <button
+          onClick={handleLeftClick}
+          className="absolute left-0 z-10 p-2 bg-white dark:bg-gray-800 text-blue-900 dark:text-blue-100 rounded-full shadow-md"
+        >
+          <ArrowLeft />
+        </button>
+        <div className="relative w-[800px] h-[500px]">
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={currentIndex}
@@ -145,7 +166,12 @@ const Carousel = memo(
             </motion.div>
           </AnimatePresence>
         </div>
-        
+        <button
+          onClick={handleRightClick}
+          className="absolute right-0 z-10 p-2 bg-white dark:bg-gray-800 text-blue-900 dark:text-blue-100 rounded-full shadow-md"
+        >
+          <ArrowRight />
+        </button>
         <div className="absolute bottom-0 left-0 right-0 flex justify-center gap-3 pb-8">
           {sections.map((_, index) => (
             <button
@@ -196,7 +222,7 @@ export function SkillsCarousel({ skillSections }) {
 
   return (
     <motion.div layout className="relative -mt-8">
-      <div className="relative h-[600px] w-full">
+      <div className="relative h-[500px] w-full">
         <Carousel
           controls={controls}
           sections={sections}
@@ -205,4 +231,4 @@ export function SkillsCarousel({ skillSections }) {
       </div>
     </motion.div>
   )
-} 
+}

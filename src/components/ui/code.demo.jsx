@@ -7,6 +7,7 @@ import HeroSection from "./HeroSection";
 import Projects from "./projects";
 import ToolsAndSkills from "./ToolsAndSkills";
 import AboutContent from "./AboutContent";
+import ContactSection from "./ContactSection";
 
 export function AuroraBackgroundDemo() {
   return (
@@ -19,6 +20,7 @@ export function AuroraBackgroundDemo() {
           <AboutContent />
           <ToolsAndSkills />
           <Projects />
+          <ContactSection />
           <Footer />
         </div>
       </div>

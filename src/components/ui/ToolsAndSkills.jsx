@@ -10,7 +10,7 @@ const ToolsAndSkills = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="pt-20"
+      className="pt-20 pb-16"
     >
       <div className="w-full">
         <h2 className="text-5xl md:text-6xl font-bold text-blue-900 dark:text-blue-100 mb-5">
