@@ -5,7 +5,7 @@ import aboutme from '/src/images/aboutme.png';
 
 const AboutContent = () => {
   return (
-    <div className="flex flex-col overflow-hidden">
+    <div id="about" className="flex flex-col overflow-hidden pt-20"> {/* Adjusted padding */}
       <ContainerScroll
         titleComponent={
           <>

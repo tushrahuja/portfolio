@@ -20,10 +20,10 @@ const Projects = () => {
   return (
     <motion.div
       id="projects"
+      className="pt-20 py-32"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="py-32"
     >
       <div className="w-full">
         <h2 className="text-5xl md:text-6xl font-bold text-blue-900 dark:text-blue-100 mb-3">

@@ -27,9 +27,9 @@ export function NavBar() {
 
   const handleClick = (name, url) => {
     setActiveTab(name);
-    const element = document.getElementById(name.toLowerCase());
+    const element = document.querySelector(url);
     if (element) {
-      const yOffset = -80; // Adjust this value to align the section properly
+      const yOffset = -100; // Adjust this value to align the section properly
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });
     }
