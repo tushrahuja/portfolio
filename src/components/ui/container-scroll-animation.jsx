@@ -30,11 +30,11 @@ export const ContainerScroll = ({ titleComponent, children }) => {
 
   return (
     <div
-      className="h-[60rem] md:h-[80rem] flex items-center justify-center relative p-2 md:p-20"
+      className="h-[65rem] md:h-[65rem] flex items-center justify-center relative p-2 md:p-10" // Increased height
       ref={containerRef}
     >
       <div
-        className="py-10 md:py-40 w-full relative"
+        className="md:py-28 w-full relative" // Reduced padding-top
         style={{
           perspective: "1000px",
         }}

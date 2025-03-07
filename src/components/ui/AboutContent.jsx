@@ -5,11 +5,11 @@ import aboutme from '/src/images/aboutme.png';
 
 const AboutContent = () => {
   return (
-    <div id="about" className="flex flex-col overflow-hidden pt-20"> {/* Adjusted padding */}
+    <div id="about" className="flex flex-col overflow-hidden"> {/* Removed padding-top */}
       <ContainerScroll
         titleComponent={
           <>
-            <h2 className="text-6xl md:text-7xl font-bold text-blue-900 dark:text-blue-100">
+            <h2 className="text-6xl md:text-7xl font-bold text-blue-900 dark:text-blue-100 mt-[-2rem]"> {/* Adjusted margin-top */}
               &lt; About Me /&gt;
             </h2>
           </>

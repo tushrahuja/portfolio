@@ -52,7 +52,7 @@ const HeroSection = () => {
         duration: 0.8,
         ease: "easeInOut",
       }}
-      className="flex flex-col gap-8 pt-16"
+      className="flex flex-col gap-6 pt-16 pb-24"
     >
       <div className="flex flex-col gap-6">
         <h1 className="text-[6rem] md:text-[7.5rem] font-bold tracking-tight leading-none -ml-3 text-blue-900 dark:text-blue-100 mb-4">
@@ -63,7 +63,7 @@ const HeroSection = () => {
           <span className="animate-pulse ml-1"></span>
         </div>
         <p className="text-xl md:text-2xl text-blue-700 dark:text-blue-300 max-w-3xl mt-4 mb-4">
-          Hi, I'm Tushar Ahuja. A passionate developer who loves to build things for the web. I enjoy turning complex problems into simple, beautiful and intuitive solutions.
+          Hi, I'm Tushar Ahuja. A passionate frontend developer who loves to build things for the web. I specialize in creating fast, responsive, and accessible websites.
         </p>
         <div className="flex items-center mt-4 space-x-4">
           <InteractiveHoverButton 
