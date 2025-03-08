@@ -8,6 +8,7 @@ import Projects from "./projects";
 import ToolsAndSkills from "./ToolsAndSkills";
 import AboutContent from "./AboutContent";
 import ContactSection from "./ContactSection";
+import EducationSection from "./EducationSection";
 
 export function AuroraBackgroundDemo() {
   return (
@@ -18,6 +19,7 @@ export function AuroraBackgroundDemo() {
         <div className="max-w-[90%] mx-auto px-6">
           <HeroSection />
           <AboutContent />
+          <EducationSection />
           <ToolsAndSkills />
           <Projects />
           <ContactSection />
