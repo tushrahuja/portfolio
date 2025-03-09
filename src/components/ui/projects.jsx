@@ -4,14 +4,17 @@ import { projects } from "../../data";
 
 const Projects = () => {
   const [currentProject, setCurrentProject] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentProject((prev) => (prev + 1) % projects.length);
+      if (!isHovered) {  // Only change slides when not hovering
+        setCurrentProject((prev) => (prev + 1) % projects.length);
+      }
     }, 8000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isHovered]);  // Add isHovered as dependency
 
   const handleProjectClick = (index) => {
     setCurrentProject(index);
@@ -41,19 +44,21 @@ const Projects = () => {
               animate={{ rotateX: 0, y: 0, opacity: 1, transition: { duration: 1.2, ease: "easeOut" } }}
               exit={{ rotateX: -90, y: -100, opacity: 0, transition: { duration: 1.2, ease: "easeIn" } }}
               className="absolute inset-0"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
             >
-              <div className="group relative rounded-xl overflow-hidden bg-blue-50/50 dark:bg-[#0A1021]/50 border border-blue-200/50 dark:border-blue-800/50 backdrop-blur-sm h-full transform-style-3d hover:scale-[1.02] transition-transform duration-300">
+              <div className="group relative rounded-xl overflow-hidden bg-blue-50/50 dark:bg-[#0A1021]/50 border border-blue-200/50 dark:border-blue-800/50 backdrop-blur-sm h-full">
                 <div className="flex flex-col lg:flex-row h-full">
                   <div className="lg:w-1/2 overflow-hidden">
                     <div className="relative h-full w-full">
                       <img 
                         src={projects[currentProject].image}
                         alt={projects[currentProject].title}
-                        className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                        className="w-full h-full object-contain transition-transform duration-500"
                       />
                     </div>
                   </div>
-                  <div className="border bg-white dark:bg-gray-900 text-blue-900 dark:text-blue-100 md:w-1/2 rounded-lg overflow-hidden shadow-md transition-transform duration-500 group-hover:scale-105 group-hover:shadow-2xl p-8">
+                  <div className="border bg-white dark:bg-gray-900 text-blue-900 dark:text-blue-100 md:w-1/2 rounded-lg overflow-hidden shadow-md transition-transform duration-500 group-hover:shadow-2xl p-8">
                     <div className="space-y-6">
                       <div>
                         <p className="text-blue-600 dark:text-blue-400 text-lg font-medium tracking-wider mb-2">

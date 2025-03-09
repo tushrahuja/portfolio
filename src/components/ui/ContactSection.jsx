@@ -4,12 +4,11 @@ import { FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from "react-icons/fa";
 
 const ContactSection = () => {
   return (
-    <div id="contact" className="relative w-full py-32"> {/* Changed min-h-screen to py-32 */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+    <div id="contact" className="relative w-full py-32">
+      <div className="relative z-10 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Left Side (Contact Info) */}
           <div className="flex flex-col justify-center">
-            <h2 className="text-5xl font-bold text-blue-900 dark:text-blue-100 mb-4">
+            <h2 className="text-5xl md:text-6xl font-bold text-blue-900 dark:text-blue-100 mb-4">
               &lt; Get in Touch /&gt;
             </h2>
             <p className="text-lg text-blue-700 dark:text-blue-300 mb-8">
@@ -25,7 +24,6 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* Right Side (Contact Form) */}
           <div className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg">
             <form>
               <div className="mb-6">

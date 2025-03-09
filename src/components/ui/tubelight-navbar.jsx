@@ -1,37 +1,32 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { cn } from "../../lib/utils";
-import { HomeIcon, FolderIcon, UserIcon } from "lucide-react"; // Added UserIcon
+import { HomeIcon, FolderIcon, UserIcon } from "lucide-react";
 
-export function NavBar() {
-  const [activeTab, setActiveTab] = useState("Home"); // Changed default to 'Home'
-  const [isMobile, setIsMobile] = useState(false);
-
+export function NavBar({ activeSection }) {
   const items = [
     { name: "Home", url: "#home", icon: HomeIcon },
-    { name: "About", url: "#about", icon: UserIcon }, // Replaced Skills with About
+    { name: "About", url: "#about", icon: UserIcon },
     { name: "Projects", url: "#projects", icon: FolderIcon },
-    // Removed Contact item
   ];
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   const handleClick = (name, url) => {
-    setActiveTab(name);
     const element = document.querySelector(url);
     if (element) {
-      const yOffset = -100; // Adjust this value to align the section properly
+      const yOffset = -100;
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });
+      // Force active section update
+      setTimeout(() => {
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            setActiveSection(section.id.charAt(0).toUpperCase() + section.id.slice(1));
+          }
+        });
+      }, 100);
     }
   };
 
@@ -40,7 +35,7 @@ export function NavBar() {
       <div className="relative flex items-center gap-3 bg-background/5 border border-blue-200 dark:border-blue-800 backdrop-blur-lg py-2 px-2 rounded-full shadow-lg">
         {items.map((item) => {
           const Icon = item.icon;
-          const isActive = activeTab === item.name;
+          const isActive = activeSection === item.name;
 
           return (
             <button
@@ -62,7 +57,7 @@ export function NavBar() {
               </span>
               {isActive && (
                 <motion.div
-                  layoutId={`lamp-${item.name}`} // Ensure unique layoutId for each item
+                  layoutId="lamp"
                   className="absolute inset-0 w-full bg-blue-500/5 dark:bg-blue-400/5 rounded-full -z-10"
                   initial={false}
                   transition={{
@@ -86,5 +81,4 @@ export function NavBar() {
   );
 }
 
-// Add a named export for backward compatibility
 export const TubelightNavbar = NavBar;
