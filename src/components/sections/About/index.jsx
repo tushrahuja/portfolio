@@ -1,6 +1,6 @@
 import React from 'react';
 import { ContainerScroll } from './ContainerScroll';
-import About from './About';
+import AboutContent from './AboutContent';
 
 const AboutSection = () => {
   return (
@@ -12,7 +12,7 @@ const AboutSection = () => {
           </h2>
         }
       >
-        <About />
+        <AboutContent />
       </ContainerScroll>
     </div>
   );
