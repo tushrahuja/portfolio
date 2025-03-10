@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { projects } from "../../data";
+import { projects } from "../../../data";
 
 const Projects = () => {
   const [currentProject, setCurrentProject] = useState(0);

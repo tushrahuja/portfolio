@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { SkillsCarousel } from "./3d-carousel";
-import { skillSections } from "../../data";
+import { SkillsCarousel } from "./Carousel3D";
+import { skillSections } from "../../../data";
 
 const ToolsAndSkills = () => {
   return (

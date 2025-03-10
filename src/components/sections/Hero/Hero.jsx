@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { InteractiveHoverButton } from "./interactive-hover-button";
-import { words } from "../../data";
+import { InteractiveHoverButton } from "../../ui/Button";
+import { words } from "../../../data";
 
 const HeroSection = () => {
   const [text, setText] = useState("");

@@ -1,8 +1,7 @@
-"use client";
 import React, { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 
-const EducationSection = () => {
+const EducationTimeline = () => {
   const ref = useRef(null);
   const containerRef = useRef(null);
   const [height, setHeight] = useState(0);
@@ -48,7 +47,7 @@ const EducationSection = () => {
                   2023-2026 | Amravati, Maharashtra.
                 </p>
                 <p className="text-lg text-blue-700 dark:text-blue-300 mt-2">
-                  Relevant courses included Data Structures and Algorithms, Artificial Intelligence, Web Development, Networking and Database Management.
+                  Relevant courses included Data Structures and Algorithms, Artificial Intelligence, Web Development, Object Oriented Programming, Networking and Database Management.
                 </p>
               </div>
             </div>
@@ -64,7 +63,7 @@ const EducationSection = () => {
                   2021-2023 | Amravati, Maharashtra.
                 </p>
                 <p className="text-lg text-blue-700 dark:text-blue-300 mt-2">
-                  Relevant courses included Microprocessors, Analog and Digital Communication, Internet of Things, Embedded Systems and Computer Networks.
+                  Relevant courses included Microcontrollers, Analog and Digital Communication, Internet of Things, Embedded Systems and Computer Networks.
                 </p>
               </div>
             </div>
@@ -89,4 +88,4 @@ const EducationSection = () => {
   );
 };
 
-export default EducationSection;
+export default EducationTimeline;
