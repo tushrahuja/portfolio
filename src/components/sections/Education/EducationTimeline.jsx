@@ -47,7 +47,7 @@ const EducationTimeline = () => {
                   2023-2026 | Amravati, Maharashtra.
                 </p>
                 <p className="text-lg text-blue-700 dark:text-blue-300 mt-2">
-                  Relevant courses included Data Structures and Algorithms, Artificial Intelligence, Web Development, Object Oriented Programming, Networking and Database Management.
+                  Relevant courses included Data Structures and Algorithms, Artificial Intelligence, Web Development, Object Oriented Programming, Networking <br/> and Database Management.
                 </p>
               </div>
             </div>
@@ -64,6 +64,22 @@ const EducationTimeline = () => {
                 </p>
                 <p className="text-lg text-blue-700 dark:text-blue-300 mt-2">
                   Relevant courses included Microcontrollers, Analog and Digital Communication, Internet of Things, Embedded Systems and Computer Networks.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black z-20 flex items-center justify-center"> {/* Added z-20 */}
+                <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
+              </div>
+              <div className="ml-16"> {/* Adjusted margin to align with Tools & Skills */}
+                <h3 className="text-2xl font-bold text-blue-900 dark:text-blue-100">
+                  Secondary School Certificate @Golden Kids English High School
+                </h3>
+                <p className="text-lg text-blue-700 dark:text-blue-300">
+                  2020 | Amravati, Maharashtra.
+                </p>
+                <p className="text-lg text-blue-700 dark:text-blue-300 mt-2">
+                  Percentage: 79.80%
                 </p>
               </div>
             </div>
