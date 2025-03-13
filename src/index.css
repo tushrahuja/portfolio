@@ -40,3 +40,9 @@ html {
   --border: 240 3.7% 15.9%;
   --primary-foreground: 240 10% 3.9%;
 }
+
+@layer utilities {
+  .aspect-4\/3 {
+    aspect-ratio: 4/3;
+  }
+}

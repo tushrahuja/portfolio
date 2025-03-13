@@ -1,0 +1,92 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { certifications } from '../../../data';
+
+const Certifications = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  return (
+    <section id="certifications" className="py-32">
+      <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={containerVariants}
+        className="container mx-auto px-4"
+      >
+        <h2 className="text-5xl md:text-6xl font-bold text-blue-900 dark:text-blue-100 mb-3">
+          &lt; Certifications /&gt;
+        </h2>
+        <p className="text-lg md:text-xl text-blue-700 dark:text-blue-300 max-w-3xl mb-16">
+          Professional certifications and achievements that demonstrate my commitment to continuous learning.
+        </p>
+        
+        <div className="flex flex-nowrap overflow-x-auto pb-8 -mx-8">
+          {certifications.map((cert, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              className="group w-80 flex-none mx-[-0.5rem] first:ml-8 last:mr-8 transition-all duration-300 relative z-10"
+            >
+              <div className="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md border-2 border-blue-900 dark:border-blue-300 relative z-10">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={cert.image}
+                    alt={cert.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-blue-900 dark:bg-blue-300 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 z-20 border-2 border-blue-900 dark:border-blue-300">
+                    <div className="text-center p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                      <h3 className="text-xl font-bold text-white dark:text-black mb-1">{cert.title}</h3>
+                      <p className="text-base font-semibold text-gray-200 dark:text-gray-800 mb-1">{cert.issuer}</p>
+                      <p className="text-sm font-medium text-gray-400 dark:text-gray-600 mb-2">{cert.date}</p>
+                      <p className="text-base font-semibold text-gray-300 dark:text-gray-700">{cert.description}</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="p-3">
+                  <motion.a
+                    href={cert.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-flex items-center text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200"
+                    whileHover={{ x: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    View
+                    <svg className="w-3 h-3 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </motion.a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    </section>
+  );
+};
+
+export default Certifications;

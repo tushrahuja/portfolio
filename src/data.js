@@ -15,7 +15,7 @@ export const projects = [
   {
     title: "ExpenseTrade",
     description: "An all-in-one financial management platform that helps users track expenses, manage income, and receive personalized stock suggestions. Features include expense tracking, income management, data visualization, and secure authentication.",
-    image: "/src/projects_screenshots/expensetrade.png",
+    image: "/src/images/projects_screenshots/expensetrade.png",
     tags: ["Python", "Streamlit", "SQLite", "Data Visualization"],
     liveDemo: "https://expensetrade.streamlit.app/",
     github: "https://github.com/tushrahuja/ExpenseTrade"
@@ -80,3 +80,54 @@ export const skillSections = {
     ]
   }
 };
+
+export const certifications = [
+  {
+    title: "DBMS Certificate",
+    issuer: "NPTEL",
+    date: "Nov 2024",
+    image: "/src/images/certificates/dbms_nptel.jpeg",
+    url: "https://example.com/cert1",
+    description: "Completed a comprehensive course on Database Management Systems."
+  },
+  {
+    title: "Node.js Bootcamp",
+    issuer: "Lets Upgrade",
+    date: "Dec 2024",
+    image: "/src/images/certificates/nodejs.jpg",
+    url: "https://example.com/cert2",
+    description: "Successfully completed a bootcamp on Node.js development."
+  },
+  {
+    title: "IEEE Participation",
+    issuer: "IEEE",
+    date: "Sep 2024",
+    image: "/src/images/certificates/ieee.jpg",
+    url: "https://example.com/cert3",
+    description: "Participated in an IEEE event focused on emerging technologies."
+  },
+  {
+    title: "Tata Imagination Challenge",
+    issuer: "Tata Group",
+    date: "2024",
+    image: "/src/images/certificates/tata.jpg",
+    url: "https://example.com/cert4",
+    description: "Participated in the Tata Imagination Challenge, showcasing innovative ideas."
+  },
+  {
+    title: "Techathon 2025",
+    issuer: "Adani University",
+    date: "Jan 2025",
+    image: "/src/images/certificates/techathon.jpg",
+    url: "https://example.com/cert5",
+    description: "Competed in Techathon 2025, demonstrating technical skills and creativity."
+  },
+  {
+    title: "Xenesis 2025",
+    issuer: "LDRP Institute",
+    date: "Feb 2025",
+    image: "/src/images/certificates/xenesis.jpg",
+    url: "https://example.com/cert6",
+    description: "Participated in Xenesis 2025, focusing on technological advancements."
+  }
+];

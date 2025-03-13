@@ -8,6 +8,7 @@ import Skills from "./components/sections/Skills";
 import About from "./components/sections/About";
 import Contact from "./components/sections/Contact";
 import Education from "./components/sections/Education";
+import Certifications from "./components/sections/Certifications/Certifications";
 import { useActiveSection } from "./hooks/useActiveSection";
 import { ThemeToggle } from "./components/ui/ThemeToggle";
 
@@ -26,6 +27,7 @@ export function App() {
           <Education />
           <Skills />
           <Projects />
+          <Certifications />
           <Contact />
           <Footer />
         </div>
