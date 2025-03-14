@@ -8,7 +8,6 @@ export const words = [
   "Student at PRPCEM",
   "Tech Enthusiast",
   "Problem Solver",
-  "Open Source Contributor"
 ];
 
 export const projects = [
@@ -83,36 +82,36 @@ export const skillSections = {
 
 export const certifications = [
   {
+    title: ".Net Conference",
+    issuer: "Microsoft Learn Student Club",
+    date: "Jan 2025",
+    image: "/src/images/certificates/dotnet.png",
+    url: "https://example.com/cert3",
+    description: "Participated in the .Net Conference, learning about the latest technologies."
+  },
+  {
     title: "DBMS Certificate",
     issuer: "NPTEL",
     date: "Nov 2024",
     image: "/src/images/certificates/dbms_nptel.jpeg",
-    url: "https://example.com/cert1",
+    url: "https://onlinecourses.swayam2.ac.in/ini24_cs01/certificate?q=gNdih1l4meksCtDATMXw9QNMsav6VjM0QEbIKlh9Pm%2B/D4lThAeII/bw3FFC5lAI",
     description: "Completed a comprehensive course on Database Management Systems."
   },
   {
-    title: "Node.js Bootcamp",
-    issuer: "Lets Upgrade",
-    date: "Dec 2024",
-    image: "/src/images/certificates/nodejs.jpg",
-    url: "https://example.com/cert2",
-    description: "Successfully completed a bootcamp on Node.js development."
-  },
-  {
-    title: "IEEE Participation",
-    issuer: "IEEE",
-    date: "Sep 2024",
-    image: "/src/images/certificates/ieee.jpg",
-    url: "https://example.com/cert3",
-    description: "Participated in an IEEE event focused on emerging technologies."
-  },
-  {
-    title: "Tata Imagination Challenge",
-    issuer: "Tata Group",
-    date: "2024",
-    image: "/src/images/certificates/tata.jpg",
+    title: "Codethon 2024",
+    issuer: "Coding Club PRPCEM",
+    date: "Oct 2024",
+    image: "/src/images/certificates/codethon.jpg",
     url: "https://example.com/cert4",
-    description: "Participated in the Tata Imagination Challenge, showcasing innovative ideas."
+    description: "Participated in Codethon 2024, showcasing coding skills and problem-solving abilities."
+  },
+  {
+    title: "MongoDB Course",
+    issuer: "GeeksforGeeks",
+    date: "Sep 2024",
+    image: "/src/images/certificates/mongodb_gfg.jpeg",
+    url: "https://media.geeksforgeeks.org/courses/certificates/c1ab6f20fe6c1c56a773eabe6b3edf59.pdf",
+    description: "Completed a course on MongoDB, learning about NoSQL databases."
   },
   {
     title: "Techathon 2025",
