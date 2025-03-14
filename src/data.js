@@ -82,11 +82,27 @@ export const skillSections = {
 
 export const certifications = [
   {
+    title: "SQL Certificate",
+    issuer: "HackerRank",
+    date: "Mar 2025",
+    image: "/src/images/certificates/sql_hackerrank.jpg",
+    url: "",
+    description: "Accomplished a assessment on SQL, testing knowledge of database queries."
+  },
+  {
+    title: "React.js Certificate",
+    issuer: "Infosys Springboard",
+    date: "Mar 2025",
+    image: "/src/images/certificates/reactjs.jpg",
+    url: "",
+    description: "Completed a course on React.js, learning about frontend development."
+  },
+  {
     title: ".Net Conference",
     issuer: "Microsoft Learn Student Club",
     date: "Jan 2025",
     image: "/src/images/certificates/dotnet.png",
-    url: "https://example.com/cert3",
+    url: "",
     description: "Participated in the .Net Conference, learning about the latest technologies."
   },
   {
@@ -102,7 +118,7 @@ export const certifications = [
     issuer: "Coding Club PRPCEM",
     date: "Oct 2024",
     image: "/src/images/certificates/codethon.jpg",
-    url: "https://example.com/cert4",
+    url: "",
     description: "Participated in Codethon 2024, showcasing coding skills and problem-solving abilities."
   },
   {
@@ -112,21 +128,5 @@ export const certifications = [
     image: "/src/images/certificates/mongodb_gfg.jpeg",
     url: "https://media.geeksforgeeks.org/courses/certificates/c1ab6f20fe6c1c56a773eabe6b3edf59.pdf",
     description: "Completed a course on MongoDB, learning about NoSQL databases."
-  },
-  {
-    title: "Techathon 2025",
-    issuer: "Adani University",
-    date: "Jan 2025",
-    image: "/src/images/certificates/techathon.jpg",
-    url: "https://example.com/cert5",
-    description: "Competed in Techathon 2025, demonstrating technical skills and creativity."
-  },
-  {
-    title: "Xenesis 2025",
-    issuer: "LDRP Institute",
-    date: "Feb 2025",
-    image: "/src/images/certificates/xenesis.jpg",
-    url: "https://example.com/cert6",
-    description: "Participated in Xenesis 2025, focusing on technological advancements."
   }
 ];
