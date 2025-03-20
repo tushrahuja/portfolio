@@ -15,7 +15,7 @@ const EducationTimeline = () => {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 10%", "end 50%"],
+    offset: ["start 50%", "end 50%"], // Adjusted start value to 50%
   });
 
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
@@ -27,7 +27,7 @@ const EducationTimeline = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="pt-20 pb-16"
+        className="pt-4 pb-16"
         ref={containerRef}
       >
         <div className="w-full">
@@ -36,55 +36,61 @@ const EducationTimeline = () => {
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black z-20 flex items-center justify-center">
                 <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
               </div>
-              <div className="ml-16">
-                <h3 className="text-2xl font-bold text-blue-900 dark:text-blue-100">
-                  Bachelor Of Engineering in Computer Science Engineering @P. R. Pote College of Engineering and Management.
-                </h3>
-                <p className="text-lg text-blue-700 dark:text-blue-300">
-                  2023-2026 | Amravati, Maharashtra.
-                </p>
-                <p className="text-lg text-blue-700 dark:text-blue-300 mt-2">
-                  Relevant courses included Data Structures and Algorithms, Artificial Intelligence, Web Development, Object Oriented Programming, Networking <br /> and Database Management.
-                </p>
+              <div className="ml-16 w-full">
+                <div className="bg-white/80 dark:bg-gray-900/80 rounded-xl p-4 border border-blue-200 dark:border-blue-800 hover:border-blue-400 dark:hover:border-blue-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                  <h3 className="text-xl font-bold text-blue-900 dark:text-blue-100">
+                    BE in Computer Science Engineering @P. R. Pote College of Engineering & Management
+                  </h3>
+                  <p className="text-md text-blue-700 dark:text-blue-300 mt-1">
+                    2023-2026 | Amravati, Maharashtra
+                  </p>
+                  <p className="text-md text-blue-700 dark:text-blue-300 mt-1">
+                    DSA, AI, Web Development, OOP, Networking, DBMS
+                  </p>
+                </div>
               </div>
             </div>
             <div className="flex items-start">
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black z-20 flex items-center justify-center">
                 <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
               </div>
-              <div className="ml-16">
-                <h3 className="text-2xl font-bold text-blue-900 dark:text-blue-100">
-                  Diploma in Electronics and Telecommunication Engineering @Government Polytechnic, Amravati.
-                </h3>
-                <p className="text-lg text-blue-700 dark:text-blue-300">
-                  2021-2023 | Amravati, Maharashtra.
-                </p>
-                <p className="text-lg text-blue-700 dark:text-blue-300 mt-2">
-                  Relevant courses included Microcontrollers, Analog and Digital Communication, Internet of Things, Embedded Systems and Computer Networks.
-                </p>
+              <div className="ml-16 w-full">
+                <div className="bg-white/80 dark:bg-gray-900/80 rounded-xl p-4 border border-blue-200 dark:border-blue-800 hover:border-blue-400 dark:hover:border-blue-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                  <h3 className="text-xl font-bold text-blue-900 dark:text-blue-100">
+                    Diploma in E&TC @Government Polytechnic
+                  </h3>
+                  <p className="text-md text-blue-700 dark:text-blue-300 mt-1">
+                    2021-2023 | Amravati, Maharashtra
+                  </p>
+                  <p className="text-md text-blue-700 dark:text-blue-300 mt-1">
+                    Microcontrollers, IoT, Embedded Systems, Networks
+                  </p>
+                </div>
               </div>
             </div>
             <div className="flex items-start">
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black z-20 flex items-center justify-center">
                 <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
               </div>
-              <div className="ml-16">
-                <h3 className="text-2xl font-bold text-blue-900 dark:text-blue-100">
-                  Secondary School Certificate @Golden Kids English High School
-                </h3>
-                <p className="text-lg text-blue-700 dark:text-blue-300">
-                  2020 | Amravati, Maharashtra.
-                </p>
-                <p className="text-lg text-blue-700 dark:text-blue-300 mt-2">
-                  Percentage: 79.80%
-                </p>
+              <div className="ml-16 w-full">
+                <div className="bg-white/80 dark:bg-gray-900/80 rounded-xl p-4 border border-blue-200 dark:border-blue-800 hover:border-blue-400 dark:hover:border-blue-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                  <h3 className="text-xl font-bold text-blue-900 dark:text-blue-100">
+                    SSC @Golden Kids English High School
+                  </h3>
+                  <p className="text-md text-blue-700 dark:text-blue-300 mt-1">
+                    2020 | Amravati, Maharashtra
+                  </p>
+                  <p className="text-md text-blue-700 dark:text-blue-300 mt-1">
+                    Percentage: 79.80%
+                  </p>
+                </div>
               </div>
             </div>
             <div
               style={{
                 height: height + "px",
               }}
-              className="absolute left-[1.85rem] top-0 overflow-hidden w-[2px] z-10 bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 dark:via-neutral-700 to-transparent to-[99%]  [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
+              className="absolute left-[1.85rem] -top-8 overflow-hidden w-[2px] z-10 bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 dark:via-neutral-700 to-transparent to-[99%]  [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
             >
               <motion.div
                 style={{

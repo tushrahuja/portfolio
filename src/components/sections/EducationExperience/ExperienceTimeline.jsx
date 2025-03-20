@@ -15,7 +15,7 @@ const ExperienceTimeline = () => {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 10%", "end 50%"],
+    offset: ["start 50%", "end 50%"], // Adjusted start value to 50%
   });
 
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
@@ -27,7 +27,7 @@ const ExperienceTimeline = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="pt-20 pb-16"
+        className="pt-4 pb-16"
         ref={containerRef}
       >
         <div className="w-full">
@@ -36,32 +36,36 @@ const ExperienceTimeline = () => {
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black z-20 flex items-center justify-center">
                 <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
               </div>
-              <div className="ml-16">
-                <h3 className="text-2xl font-bold text-blue-900 dark:text-blue-100">
-                  Data Analytics Intern @Edunet
-                </h3>
-                <p className="text-lg text-blue-700 dark:text-blue-300">
-                  2023-Present | Remote
-                </p>
-                <p className="text-lg text-blue-700 dark:text-blue-300 mt-2">
-                  Assisting in the development of data-driven insights and reports, utilizing SQL, Python, and Tableau.
-                </p>
+              <div className="ml-16 w-full">
+                <div className="bg-white/80 dark:bg-gray-900/80 rounded-xl p-4 border border-blue-200 dark:border-blue-800 hover:border-blue-400 dark:hover:border-blue-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                  <h3 className="text-xl font-bold text-blue-900 dark:text-blue-100">
+                    Data Analyst Intern @Connecting Dream Foundation
+                  </h3>
+                  <p className="text-md text-blue-700 dark:text-blue-300 mt-1">
+                    Oct 2024 - Nov 2024 | Remote
+                  </p>
+                  <p className="text-md text-blue-700 dark:text-blue-300 mt-1">
+                    Developed data-driven insights and dashboards to support business decisions.
+                  </p>
+                </div>
               </div>
             </div>
             <div className="flex items-start">
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black z-20 flex items-center justify-center">
                 <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
               </div>
-              <div className="ml-16">
-                <h3 className="text-2xl font-bold text-blue-900 dark:text-blue-100">
-                  Intern @Startup
-                </h3>
-                <p className="text-lg text-blue-700 dark:text-blue-300">
-                  2022-2023 | Remote
-                </p>
-                <p className="text-lg text-blue-700 dark:text-blue-300 mt-2">
-                  Assisted in the development of web applications, gaining hands-on experience with various frontend technologies and best practices.
-                </p>
+              <div className="ml-16 w-full">
+                <div className="bg-white/80 dark:bg-gray-900/80 rounded-xl p-4 border border-blue-200 dark:border-blue-800 hover:border-blue-400 dark:hover:border-blue-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                  <h3 className="text-xl font-bold text-blue-900 dark:text-blue-100">
+                    AI-ML Virtual Intern @EduSkills AICTE
+                  </h3>
+                  <p className="text-md text-blue-700 dark:text-blue-300 mt-1">
+                    Jul 2024 - Sep 2024 | Remote
+                  </p>
+                  <p className="text-md text-blue-700 dark:text-blue-300 mt-1">
+                    Implemented ML algorithms and data preprocessing techniques.
+                  </p>
+                </div>
               </div>
             </div>
             <div

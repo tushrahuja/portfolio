@@ -20,7 +20,7 @@ const InteractiveHoverButton = React.forwardRef(({ text = "Button", className, o
         <span>{text}</span>
         <ArrowRight className="h-5 w-5" />
       </div>
-      <div className="absolute right-0 bottom-0 h-2 w-2 scale-[1] rounded-lg bg-black dark:bg-white transition-all duration-300 group-hover:left-[0%] group-hover:top-[0%] group-hover:h-full group-hover:w-full group-hover:scale-[1.8]"></div>
+      <div className="absolute right-0 bottom-0 h-2 w-2 scale-[1] rounded-lg bg-blue-900 dark:bg-blue-100 transition-all duration-300 group-hover:left-[0%] group-hover:top-[0%] group-hover:h-full group-hover:w-full group-hover:scale-[1.8]"></div>
     </button>
   );
 });

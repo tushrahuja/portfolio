@@ -69,7 +69,8 @@ const HeroSection = () => {
             <span className="animate-pulse ml-1"></span>
           </div>
           <p className="text-xl md:text-2xl text-blue-700 dark:text-blue-300 max-w-3xl mt-4 mb-4">
-            Hi, I'm Tushar Ahuja. A passionate frontend developer who loves to build things for the web. I specialize in creating fast, responsive, and accessible websites.
+            Hi, I'm Tushar Ahuja. A passionate Full Stack Developer and a Computer Science Engineering student based in Amravati, Maharashtra.
+            I love building web applications and solving problems using technology.
           </p>
           <div className="flex items-center mt-4 space-x-4">
             <InteractiveHoverButton 

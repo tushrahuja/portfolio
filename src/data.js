@@ -1,13 +1,15 @@
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaJava, FaPython, FaReact, FaBootstrap, FaGitAlt, FaCloud } from "react-icons/fa";
-import { SiTailwindcss, SiFramer, SiVite, SiDjango, SiMysql, SiMongodb } from "react-icons/si";
+import { FaHtml5, FaCss3Alt, FaJsSquare, FaJava, FaPython, FaReact, FaBootstrap, FaGitAlt, FaCloud, FaNodeJs } from "react-icons/fa";
+import { SiTailwindcss, SiFramer, SiVite, SiDjango, SiMysql, SiMongodb, SiExpress } from "react-icons/si";
 import { GiPuzzle } from "react-icons/gi";
 import { BsPeopleFill, BsClockFill } from "react-icons/bs";
 
 export const words = [
-  "Frontend Developer",
-  "Student at PRPCEM",
+  "Full Stack Developer",
   "Tech Enthusiast",
   "Problem Solver",
+  "Web Developer",
+  "Designer",
+  "Coder"
 ];
 
 export const projects = [
@@ -20,10 +22,10 @@ export const projects = [
     github: "https://github.com/tushrahuja/ExpenseTrade"
   },
   {
-    title: "Sample Project",
-    description: "This is a sample project to test the animation and layout. It includes basic features and a simple design.",
+    title: "Portfolio Website",
+    description: "A personal portfolio website template that showcases projects, skills, and certifications. Features include a dark mode toggle, smooth scroll, and interactive animations.",
     image: "/src/projects_screenshots/sampleproject.jpg",
-    tags: ["HTML", "CSS", "JavaScript"],
+    tags: ["React.js", "Tailwind CSS", "Framer Motion"],
     liveDemo: "#",
     github: "#"
   },
@@ -53,7 +55,9 @@ export const skillSections = {
   backend: {
     title: "Backend",
     items: [
-      { name: "Django", icon: SiDjango, color: "#092E20" }
+      { name: "Django", icon: SiDjango, color: "#092E20" },
+      { name: "Node.js", icon: FaNodeJs, color: "#339933" },
+      { name: "Express.js", icon: SiExpress, color: "#000000" }
     ]
   },
   database: {
