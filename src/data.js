@@ -15,9 +15,9 @@ export const words = [
 export const projects = [
   {
     title: "ExpenseTrade",
-    description: "An all-in-one financial management platform that helps users track expenses, manage income, and receive personalized stock suggestions. Features include expense tracking, income management, data visualization, and secure authentication.",
+    description: "A financial management platform that tracks expenses, manages income, and suggests personalized stocks. Features expense tracking, data visualization, and secure authentication.",
     image: "/src/images/projects_screenshots/expensetrade.png",
-    tags: ["Python", "Streamlit", "SQLite", "Data Visualization"],
+    tags: ["Python", "Streamlit", "Data Visualization"],
     liveDemo: "https://expensetrade.streamlit.app/",
     github: "https://github.com/tushrahuja/ExpenseTrade"
   },

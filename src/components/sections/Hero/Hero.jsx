@@ -59,9 +59,43 @@ const HeroSection = () => {
       }}
       className="flex flex-col gap-6 pt-16 pb-24"
     >
-      <div className="flex items-center justify-between">
+      {/* Mobile Layout */}
+      <div className="flex flex-col items-center px-4 lg:hidden">
+        <h1 className="text-4xl font-bold text-blue-900 dark:text-blue-100 mb-6 text-center">
+          TUSHAR AHUJA
+        </h1>
+        <div className="w-48 h-48 rounded-full border-4 border-blue-900 dark:border-blue-100 mb-6">
+          <img
+            src={pfp}
+            alt="Tushar Ahuja"
+            className="w-full h-full object-cover rounded-full"
+          />
+        </div>
+        <div className="text-2xl text-blue-800 dark:text-blue-200 mb-6 text-center">
+          &lt; {text}| /&gt;
+          <span className="animate-pulse ml-1"></span>
+        </div>
+        <p className="text-lg text-blue-700 dark:text-blue-300 text-center mb-6">
+          Hi, I'm Tushar Ahuja. A passionate Full Stack Developer and a Computer Science Engineering student based in Amravati, Maharashtra.
+          I love building web applications and solving problems using technology.
+        </p>
+        <div className="flex gap-4">
+          <InteractiveHoverButton 
+            text="Get in touch"
+            onClick={() => jumpToSection('contact')}
+            className="text-blue-900 dark:text-blue-100 border-blue-200 dark:border-blue-800 text-lg font-semibold w-40 backdrop-blur-sm hover:bg-blue-50 dark:hover:bg-blue-900/20"
+          />
+          <InteractiveHoverButton 
+            text="Get Resume"
+            className="text-blue-900 dark:text-blue-100 border-blue-200 dark:border-blue-800 text-lg font-semibold w-40 backdrop-blur-sm hover:bg-blue-50 dark:hover:bg-blue-900/20"
+          />
+        </div>
+      </div>
+
+      {/* Desktop layout - unchanged */}
+      <div className="hidden lg:flex items-center justify-between">
         <div className="flex flex-col gap-6">
-          <h1 className="text-[6rem] md:text-[7.5rem] font-bold tracking-tight leading-none -ml-3 text-blue-900 dark:text-blue-100 mb-4">
+          <h1 className="text-[6rem] font-bold tracking-tight leading-none -ml-3 text-blue-900 dark:text-blue-100 mb-4">
             TUSHAR AHUJA
           </h1>
           <div className="text-3xl md:text-4xl font-normal text-blue-800 dark:text-blue-200 flex items-center mb-4">

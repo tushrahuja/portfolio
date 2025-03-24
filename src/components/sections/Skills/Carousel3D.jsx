@@ -33,25 +33,24 @@ const transitionOverlay = { duration: 0.5, ease: [0.32, 0.72, 0, 1] }
 
 const SkillCard = ({ title, items }) => (
   <motion.div
-    className="bg-blue-50/90 dark:bg-[#0A1021]/90 backdrop-blur-sm rounded-xl p-8 border border-blue-200 dark:border-[#1E293B] hover:border-blue-400 dark:hover:border-[#3B82F6] transition-colors duration-200 w-[800px]"
-    whileHover={{ scale: 1.02 }}
+    className="bg-blue-50/90 dark:bg-[#0A1021]/90 backdrop-blur-sm rounded-xl 
+               p-4 lg:p-8 w-[280px] sm:w-[300px] lg:w-[800px]
+               border border-blue-200 dark:border-blue-800 hover:border-blue-400 dark:hover:border-blue-600"
   >
-    <h3 className="text-4xl font-bold text-blue-900 dark:text-white mb-8 border-b border-blue-200 dark:border-[#1E293B] pb-4">
+    <h3 className="text-xl sm:text-2xl lg:text-4xl font-bold mb-4 lg:mb-8 text-blue-900 dark:text-blue-100">
       {title}
     </h3>
-    <div className="flex flex-wrap gap-5">
+    <div className="flex flex-wrap gap-2 lg:gap-5">
       {items.map((item) => (
         <div 
-          key={item.name}
-          className="flex items-center gap-4 bg-white/80 dark:bg-[#1E293B]/50 px-6 py-5 rounded-lg border border-blue-100 dark:border-[#1E293B]/50 hover:border-blue-300 dark:hover:border-blue-500/30 transition-colors duration-200"
+          key={item.name} 
+          className="flex items-center gap-2 lg:gap-4 p-2 lg:p-4 
+                     bg-white/80 dark:bg-[#1E293B]/50 
+                     border border-blue-100 dark:border-[#1E293B]/50 
+                     rounded-lg hover:border-blue-300 dark:hover:border-blue-500/30"
         >
-          <item.icon 
-            className="w-8 h-8"
-            style={{ color: item.color }}
-          />
-          <span className="text-blue-900 dark:text-white/90 text-xl font-medium">
-            {item.name}
-          </span>
+          <item.icon className="w-5 h-5 lg:w-8 lg:h-8" style={{ color: item.color }} />
+          <span className="text-sm lg:text-xl text-blue-900 dark:text-blue-100">{item.name}</span>
         </div>
       ))}
     </div>
