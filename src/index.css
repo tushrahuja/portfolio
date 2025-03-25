@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+  }
+
+  p, span, div, a, li {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  /* Navbar specific styles */
+  .navbar-link {
+    @apply text-base md:text-lg font-medium;
+    font-family: "EB Garamond", serif;
+  }
+}
+
 :root {
   --background: 0 0% 100%;
   --foreground: 240 10% 3.9%;
