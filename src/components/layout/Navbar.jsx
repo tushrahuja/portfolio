@@ -1,10 +1,11 @@
 "use client";
-import React, { useEffect } from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../../lib/utils";
-import { HomeIcon, FolderIcon, UserIcon } from "lucide-react";
+import { HomeIcon, FolderIcon, UserIcon, Menu } from "lucide-react";
 
 export function NavBar({ activeSection }) {
+  const [isOpen, setIsOpen] = useState(false);
   const items = [
     { name: "Home", url: "#home", icon: HomeIcon },
     { name: "About", url: "#about", icon: UserIcon },
@@ -17,6 +18,7 @@ export function NavBar({ activeSection }) {
       const yOffset = -100;
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });
+      setIsOpen(false);
       // Force active section update
       setTimeout(() => {
         const sections = document.querySelectorAll('section');
@@ -32,7 +34,48 @@ export function NavBar({ activeSection }) {
 
   return (
     <div className="fixed top-2 right-8 z-[100] mt-8">
-      <div className="relative flex items-center gap-3 bg-background/5 border border-blue-200 dark:border-blue-800 backdrop-blur-lg py-2 px-2 rounded-full shadow-lg">
+      {/* Mobile Menu */}
+      <div className="md:hidden">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="p-2 bg-background/5 border border-blue-200 dark:border-blue-800 backdrop-blur-lg rounded-full"
+        >
+          <Menu className="h-6 w-6 text-blue-900 dark:text-blue-100" />
+        </button>
+
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="absolute right-0 mt-2 py-2 w-48 bg-white/10 border border-blue-200 dark:border-blue-800 backdrop-blur-lg rounded-xl"
+            >
+              {items.map((item) => {
+                const Icon = item.icon;
+                const isActive = activeSection === item.name;
+                return (
+                  <button
+                    key={item.name}
+                    onClick={() => handleClick(item.name, item.url)}
+                    className={cn(
+                      "flex items-center w-full px-4 py-2 text-left",
+                      "text-blue-900 dark:text-blue-100 hover:bg-blue-50/50 dark:hover:bg-blue-900/20",
+                      isActive && "bg-blue-50/50 dark:bg-blue-900/20"
+                    )}
+                  >
+                    <Icon className="w-5 h-5 mr-2" />
+                    {item.name}
+                  </button>
+                );
+              })}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
+      {/* Desktop Menu with Tubelight Effect */}
+      <div className="hidden md:flex items-center gap-3 bg-background/5 border border-blue-200 dark:border-blue-800 backdrop-blur-lg py-2 px-2 rounded-full shadow-lg">
         {items.map((item) => {
           const Icon = item.icon;
           const isActive = activeSection === item.name;

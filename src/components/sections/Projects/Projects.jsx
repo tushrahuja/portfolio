@@ -32,23 +32,23 @@ const Projects = () => {
   return (
     <motion.div
       id="projects"
-      className="pt-9 py-32" // Reduced padding-top
+      className="pt-9 py-32 container mx-0 px-4 md:pl-6 lg:pl-8"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
       <div className="w-full">
-        <h2 className="text-3xl md:text-6xl font-bold text-blue-900 dark:text-blue-100 mb-3">
+        <h2 className="text-[2rem] md:text-6xl font-bold text-blue-900 dark:text-blue-100 mb-3 whitespace-nowrap">
           &lt; Projects /&gt;
         </h2>
-        <p className="text-sm md:text-xl text-blue-700 dark:text-blue-300 max-w-3xl mb-16">
+        <p className="text-sm md:text-xl text-blue-700 dark:text-blue-300 max-w-3xl mb-16 text-left">
           A collection of projects that showcase my passion for building innovative and user-friendly applications.
         </p>
 
-        <div className="relative h-[450px] perspective-[1000px]">
+        <div className="relative h-[450px] md:h-[400px] perspective-[1000px]"> {/* Reduced height for laptop */}
           <button
             onClick={handlePrevProject}
-            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-2 bg-white dark:bg-gray-800 text-blue-900 dark:text-blue-100 rounded-full shadow-md hidden sm:block"
+            className="absolute left-[-3rem] top-1/2 -translate-y-1/2 z-10 p-2 bg-white dark:bg-gray-800 text-blue-900 dark:text-blue-100 rounded-full shadow-md hidden sm:block"
           >
             <ArrowLeft className="w-5 h-5" />
           </button>
@@ -69,10 +69,15 @@ const Projects = () => {
                     <img 
                       src={projects[currentProject].image}
                       alt={projects[currentProject].title}
-                      className="w-full h-full object-contain lg:object-cover p-2"
+                      className="w-full h-full object-contain lg:object-contain p-2" // Changed to contain and added padding
                     />
                   </div>
-                  <div className="w-full lg:w-1/2 p-4 lg:p-8 border-t lg:border-t-0 lg:border-l border-blue-200/50 dark:border-blue-800/50">
+                  <div className="w-full lg:w-1/2 p-4 lg:p-8 
+                    border-2 border-blue-300 dark:border-blue-300
+                    bg-blue-50/50 dark:bg-[#0A1021]/50 
+                    rounded-b-xl lg:rounded-l-none lg:rounded-r-xl
+                    lg:border-2"
+                  >
                     <div className="space-y-6">
                       <div>
                         <p className="text-blue-600 dark:text-blue-400 text-sm sm:text-lg font-medium tracking-wider mb-2">
@@ -128,7 +133,7 @@ const Projects = () => {
 
           <button
             onClick={handleNextProject}
-            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-2 bg-white dark:bg-gray-800 text-blue-900 dark:text-blue-100 rounded-full shadow-md hidden sm:block"
+            className="absolute right-[-3rem] top-1/2 -translate-y-1/2 z-10 p-2 bg-white dark:bg.gray-800 text-blue-900 dark:text-blue-100 rounded-full shadow-md hidden sm:block"
           >
             <ArrowRight className="w-5 h-5" />
           </button>
@@ -141,7 +146,7 @@ const Projects = () => {
                 className={`w-3 h-3 rounded-full transition-colors ${
                   index === currentProject
                     ? "bg-blue-500 dark:bg-blue-400"
-                    : "bg-blue-200 dark:bg-gray-600 hover:bg-blue-300 dark:hover:bg-gray-500"
+                    : "bg-blue-200 dark:bg-gray-600 hover:bg-blue-300 dark:hover:bg.gray-500"
                 }`}
               />
             ))}

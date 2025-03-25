@@ -36,9 +36,9 @@ const EducationTimeline = () => {
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black z-20 flex items-center justify-center">
                 <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
               </div>
-              <div className="ml-16 w-full">
-                <div className="bg-white/80 dark:bg-gray-900/80 rounded-xl p-4 border border-blue-200 dark:border-blue-800 hover:border-blue-400 dark:hover:border-blue-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                  <h3 className="text-xl font-bold text-blue-900 dark:text-blue-100">
+              <div className="ml-12 md:ml-16 w-full"> {/* Reduced margin */}
+                <div className="bg-white/80 dark:bg-gray-900/80 rounded-xl p-3 md:p-4 border border-blue-200 dark:border-blue-800 hover:border-blue-400 dark:hover:border-blue-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                  <h3 className="text-base md:text-xl font-bold text-blue-900 dark:text-blue-100"> {/* Reduced text size */}
                     BE in Computer Science Engineering @P. R. Pote College of Engineering & Management
                   </h3>
                   <p className="text-md text-blue-700 dark:text-blue-300 mt-1">
@@ -54,9 +54,9 @@ const EducationTimeline = () => {
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black z-20 flex items-center justify-center">
                 <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
               </div>
-              <div className="ml-16 w-full">
-                <div className="bg-white/80 dark:bg-gray-900/80 rounded-xl p-4 border border-blue-200 dark:border-blue-800 hover:border-blue-400 dark:hover:border-blue-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                  <h3 className="text-xl font-bold text-blue-900 dark:text-blue-100">
+              <div className="ml-12 md:ml-16 w-full"> {/* Reduced margin */}
+                <div className="bg-white/80 dark:bg-gray-900/80 rounded-xl p-3 md:p-4 border border-blue-200 dark:border-blue-800 hover:border-blue-400 dark:hover:border-blue-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                  <h3 className="text-base md:text-xl font-bold text-blue-900 dark:text-blue-100"> {/* Reduced text size */}
                     Diploma in E&TC @Government Polytechnic
                   </h3>
                   <p className="text-md text-blue-700 dark:text-blue-300 mt-1">
@@ -72,9 +72,9 @@ const EducationTimeline = () => {
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black z-20 flex items-center justify-center">
                 <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
               </div>
-              <div className="ml-16 w-full">
-                <div className="bg-white/80 dark:bg-gray-900/80 rounded-xl p-4 border border-blue-200 dark:border-blue-800 hover:border-blue-400 dark:hover:border-blue-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                  <h3 className="text-xl font-bold text-blue-900 dark:text-blue-100">
+              <div className="ml-12 md:ml-16 w-full"> {/* Reduced margin */}
+                <div className="bg-white/80 dark:bg-gray-900/80 rounded-xl p-3 md:p-4 border border-blue-200 dark:border-blue-800 hover:border-blue-400 dark:hover:border-blue-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                  <h3 className="text-base md:text-xl font-bold text-blue-900 dark:text-blue-100"> {/* Reduced text size */}
                     SSC @Golden Kids English High School
                   </h3>
                   <p className="text-md text-blue-700 dark:text-blue-300 mt-1">

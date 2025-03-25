@@ -137,9 +137,9 @@ const Carousel = memo(
       >
         <button
           onClick={handleLeftClick}
-          className="absolute left-0 z-10 p-2 bg-white dark:bg-gray-800 text-blue-900 dark:text-blue-100 rounded-full shadow-md"
+          className="absolute left-0 md:left-2 z-10 p-1 md:p-2 bg-white dark:bg-gray-800 text-blue-900 dark:text-blue-100 rounded-full shadow-md scale-75 md:scale-100 -translate-x-1 md:translate-x-0"
         >
-          <ArrowLeft />
+          <ArrowLeft className="w-4 h-4 md:w-5 md:h-5" />
         </button>
         <div className="relative w-[800px] h-[500px]">
           <AnimatePresence mode="wait" initial={false}>
@@ -167,9 +167,9 @@ const Carousel = memo(
         </div>
         <button
           onClick={handleRightClick}
-          className="absolute right-0 z-10 p-2 bg-white dark:bg-gray-800 text-blue-900 dark:text-blue-100 rounded-full shadow-md"
+          className="absolute right-0 md:right-2 z-10 p-1 md:p-2 bg-white dark:bg-gray-800 text-blue-900 dark:text-blue-100 rounded-full shadow-md scale-75 md:scale-100 translate-x-1 md:translate-x-0"
         >
-          <ArrowRight />
+          <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
         </button>
         <div className="absolute bottom-0 left-0 right-0 flex justify-center gap-3 pb-8">
           {sections.map((_, index) => (

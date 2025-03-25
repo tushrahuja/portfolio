@@ -33,10 +33,10 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg">
+    <div className="bg-white dark:bg-gray-900 p-4 md:p-8 rounded-lg shadow-lg w-full md:max-w-xl lg:max-w-2xl mx-auto">
       <form ref={form} onSubmit={handleSubmit}>
-        <div className="mb-6">
-          <label htmlFor="user_name" className="block text-lg font-medium text-blue-900 dark:text-blue-100 mb-2">
+        <div className="mb-3 md:mb-6">
+          <label htmlFor="user_name" className="block text-base md:text-lg font-medium text-blue-900 dark:text-blue-100 mb-2">
             Name
           </label>
           <input
@@ -44,7 +44,7 @@ const ContactForm = () => {
             id="user_name"
             name="user_name"
             required
-            className="w-full px-4 py-2 border border-blue-200 dark:border-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 text-blue-900 dark:text-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 md:px-4 py-2 border border-blue-200 dark:border-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 text-blue-900 dark:text-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <div className="mb-6">

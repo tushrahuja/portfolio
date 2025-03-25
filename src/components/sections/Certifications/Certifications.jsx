@@ -34,10 +34,10 @@ const Certifications = () => {
         variants={containerVariants}
         className="container mx-auto px-4"
       >
-        <h2 className="text-3xl md:text-6xl font-bold text-blue-900 dark:text-blue-100 mb-3">
+        <h2 className="text-[2rem] md:text-6xl font-bold text-blue-900 dark:text-blue-100 mb-3 whitespace-nowrap text-left">
           &lt; Certifications /&gt;
         </h2>
-        <p className="text-sm md:text-xl text-blue-700 dark:text-blue-300 max-w-3xl mb-12">
+        <p className="text-sm md:text-xl text-blue-700 dark:text-blue-300 max-w-3xl mb-12 text-left">
           Professional certifications and achievements that demonstrate my commitment to continuous learning.
         </p>
         
