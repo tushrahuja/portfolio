@@ -4,7 +4,7 @@ import ExperienceTimeline from './ExperienceTimeline';
 
 const EducationExperience = () => {
   return (
-    <section id="education-experience" className="py-32">
+    <section id="education-experience" className="py-4 md:py-32"> {/* Further reduced padding for mobile */}
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-6xl font-bold text-blue-900 dark:text-blue-100 mb-6">
           &lt; Education & Experience /&gt;

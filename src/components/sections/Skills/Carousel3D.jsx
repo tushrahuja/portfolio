@@ -218,9 +218,10 @@ const ItemsGrid = ({ items }) => (
 export function SkillsCarousel({ skillSections }) {
   const controls = useAnimation()
   const sections = Object.values(skillSections)
+  const isMobile = useMediaQuery("(max-width: 768px)")
 
   return (
-    <motion.div layout className="relative -mt-8">
+    <motion.div layout className={`relative ${isMobile ? '-mt-20' : '-mt-8'}`}>
       <div className="relative h-[500px] w-full">
         <Carousel
           controls={controls}

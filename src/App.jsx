@@ -23,8 +23,12 @@ export function App() {
       <div className="relative z-10 w-full pt-16">
         <div className="max-w-[90%] mx-auto px-6">
           <Hero />
-          <About />
-          <EducationExperience />
+          <div className="md:py-0 py-0"> {/* Removed negative margins */}
+            <About />
+          </div>
+          <div className="md:py-0 py-0"> {/* Removed negative margins */}
+            <EducationExperience />
+          </div>
           <Skills />
           <Projects />
           <Certifications />

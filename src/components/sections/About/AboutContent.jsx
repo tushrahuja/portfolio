@@ -7,8 +7,8 @@ const AboutContent = () => {
       <img
         src={aboutme}
         alt="About Me"
-        className="w-full h-full object-contain lg:object-cover rounded-xl
-                   transform rotate-90 scale-150 lg:rotate-0 lg:scale-100"
+        className="w-full h-full object-contain md:object-cover rounded-xl
+                   transform rotate-90 scale-[1.8] md:rotate-0 md:scale-100" // Increased scale to 1.8 for mobile only
         draggable={false}
       />
     </div>

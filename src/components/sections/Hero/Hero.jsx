@@ -57,7 +57,7 @@ const HeroSection = () => {
         duration: 0.8,
         ease: "easeInOut",
       }}
-      className="flex flex-col gap-6 pt-16 pb-24"
+      className="flex flex-col gap-6 pt-16 pb-8 md:pb-24"
     >
       {/* Mobile Layout */}
       <div className="flex flex-col items-center px-4 lg:hidden">
