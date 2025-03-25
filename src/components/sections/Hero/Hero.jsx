@@ -43,10 +43,6 @@ const HeroSection = () => {
     }
   };
 
-  useEffect(() => {
-    document.documentElement.classList.add('dark');
-  }, []);
-
   return (
     <motion.div
       id="home"
