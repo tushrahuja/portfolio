@@ -63,44 +63,43 @@ const Projects = () => {
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
-              <div className="group relative rounded-xl overflow-hidden bg-blue-50/50 dark:bg-[#0A1021]/50 border border-blue-200/50 dark:border-blue-800/50 backdrop-blur-sm h-full">
+              <div className="group relative rounded-xl overflow-hidden bg-blue-50/50 dark:bg-[#0A1021]/50 h-full">
                 <div className="flex flex-col lg:flex-row h-full">
                   <div className="w-full lg:w-1/2 h-[200px] lg:h-full">
                     <img 
                       src={projects[currentProject].image}
                       alt={projects[currentProject].title}
-                      className="w-full h-full object-contain lg:object-contain p-2" // Changed to contain and added padding
+                      className="w-full h-full object-contain p-2"
                     />
                   </div>
                   <div className="w-full lg:w-1/2 p-4 lg:p-8 
-                    border-2 border-blue-300 dark:border-blue-300
                     bg-blue-50/50 dark:bg-[#0A1021]/50 
-                    rounded-b-xl lg:rounded-l-none lg:rounded-r-xl
-                    lg:border-2"
+                    border-2 border-blue-300 dark:border-blue-300
+                    rounded-b-xl lg:rounded-xl"
                   >
-                    <div className="space-y-6">
+                    <div className="space-y-4 relative pb-12"> {/* Reduced bottom padding */}
                       <div>
-                        <p className="text-blue-600 dark:text-blue-400 text-sm sm:text-lg font-medium tracking-wider mb-2">
+                        <p className="text-xs sm:text-sm font-medium tracking-wider mb-2 text-blue-600 dark:text-blue-400">
                           FEATURED PROJECT
                         </p>
-                        <h3 className="text-xl sm:text-3xl font-bold text-blue-900 dark:text-blue-100">
+                        <h3 className="text-lg sm:text-2xl font-bold text-blue-900 dark:text-blue-100">
                           {projects[currentProject].title}
                         </h3>
                       </div>
-                      <p className="text-sm md:text-lg text-blue-700 dark:text-blue-300">
+                      <p className="text-xs md:text-base text-blue-700 dark:text-blue-300">
                         {projects[currentProject].description}
                       </p>
                       <div className="flex flex-wrap gap-2">
                         {projects[currentProject].tags.map((tag, index) => (
                           <span 
                             key={index}
-                            className="px-2 py-1 text-xs sm:text-sm rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800"
+                            className="px-2 py-1 text-[10px] sm:text-xs rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800"
                           >
                             {tag}
                           </span>
                         ))}
                       </div>
-                      <div className="flex gap-4">
+                      <div className="flex gap-4 absolute bottom-0 left-0">
                         <a
                           href={projects[currentProject].github}
                           target="_blank"
@@ -133,7 +132,7 @@ const Projects = () => {
 
           <button
             onClick={handleNextProject}
-            className="absolute right-[-3rem] top-1/2 -translate-y-1/2 z-10 p-2 bg-white dark:bg.gray-800 text-blue-900 dark:text-blue-100 rounded-full shadow-md hidden sm:block"
+            className="absolute right-[-3rem] top-1/2 -translate-y-1/2 z-10 p-2 bg-white dark:bg-gray-800 text-blue-900 dark:text-blue-100 rounded-full shadow-md hidden sm:block"
           >
             <ArrowRight className="w-5 h-5" />
           </button>
