@@ -1,6 +1,6 @@
 import React from "react";
 import { AuroraBackground } from "./components/ui/AuroraBackground";
-import { NavBar } from "./components/layout/NavBar"; // Fixed casing to match actual file name
+import { NavBar } from "./components/layout/NavBar"; // Using correct file casing
 import { Footer } from "./components/layout/Footer";
 import Hero from "./components/sections/Hero";
 import Projects from "./components/sections/Projects";
