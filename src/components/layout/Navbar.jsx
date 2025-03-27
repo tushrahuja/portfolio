@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../../lib/utils";
 import { HomeIcon, FolderIcon, UserIcon, Menu } from "lucide-react";
 
-export function NavBar({ activeSection }) {
+export function Navbar({ activeSection }) {
   const [isOpen, setIsOpen] = useState(false);
   const items = [
     { name: "Home", url: "#home", icon: HomeIcon },
@@ -124,4 +124,4 @@ export function NavBar({ activeSection }) {
   );
 }
 
-export const TubelightNavbar = NavBar;
+export const TubelightNavbar = Navbar;

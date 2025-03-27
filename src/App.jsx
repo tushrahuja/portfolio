@@ -1,6 +1,6 @@
 import React from "react";
 import { AuroraBackground } from "./components/ui/AuroraBackground";
-import { NavBar } from "./components/layout/NavBar"; // Using correct file casing
+import { Navbar } from "./components/layout/Navbar"; // Changed NavBar to Navbar
 import { Footer } from "./components/layout/Footer";
 import Hero from "./components/sections/Hero";
 import Projects from "./components/sections/Projects";
@@ -19,7 +19,7 @@ export function App() {
     <div className="relative min-h-screen w-full bg-white dark:bg-black">
       <AuroraBackground className="fixed inset-0 z-0" />
       <ThemeToggle />
-      <NavBar activeSection={activeSection} />
+      <Navbar activeSection={activeSection} /> {/* Changed NavBar to Navbar */}
       <div className="relative z-10 w-full pt-16">
         <div className="max-w-[90%] mx-auto px-6">
           <Hero />
