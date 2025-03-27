@@ -41,21 +41,26 @@ const Certifications = () => {
           Professional certifications and achievements that demonstrate my commitment to continuous learning.
         </p>
         
-        <div className="flex flex-nowrap overflow-x-auto pb-8 -mx-4 sm:-mx-8">
+        <div className="flex flex-nowrap overflow-x-auto pb-8 -mx-4 sm:-mx-8 scroll-smooth">
           {certifications.map((cert, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="group w-64 sm:w-80 flex-none mx-2 sm:mx-[-0.5rem] first:ml-4 sm:first:ml-8 last:mr-4 sm:last:mr-8 transition-all duration-300 relative z-10"
+              className="group w-64 sm:w-80 flex-none mx-[-1rem] sm:mx-[-0.5rem] first:ml-4 sm:first:ml-8 last:mr-4 sm:last:mr-8 
+                         transition-all duration-300 relative"
+              style={{
+                marginRight: index === certifications.length - 1 ? '1rem' : '0',
+                zIndex: certifications.length - index // Higher index items have lower z-index
+              }}
             >
-              <div className="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md border-2 border-blue-900 dark:border-blue-300 relative z-10">
+              <div className="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md border-2 border-blue-900 dark:border-blue-300 relative">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
                     src={cert.image}
                     alt={cert.title}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-blue-900 dark:bg-blue-300 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 z-20 border-2 border-blue-900 dark:border-blue-300">
+                  <div className="absolute inset-0 bg-blue-900 dark:bg-blue-300 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 border-2 border-blue-900 dark:border-blue-300">
                     <div className="text-center p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                       <h3 className="text-base md:text-xl font-bold text-white dark:text-black mb-1">{cert.title}</h3>
                       <p className="text-sm md:text-base font-semibold text-gray-200 dark:text-gray-800 mb-1">{cert.issuer}</p>

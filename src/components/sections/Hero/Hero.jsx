@@ -66,7 +66,7 @@ const HeroSection = () => {
             className="w-full h-full object-cover rounded-full"
           />
         </div>
-        <div className="text-2xl text-blue-800 dark:text-blue-200 mb-6 text-center">
+        <div className="text-2xl text-blue-800 dark:text-blue-200 mb-6 text-center min-h-[3rem] w-full">
           &lt; {text}| /&gt;
           <span className="animate-pulse ml-1"></span>
         </div>
@@ -74,15 +74,15 @@ const HeroSection = () => {
           Hi, I'm Tushar Ahuja. A passionate Full Stack Developer and a Computer Science Engineering student based in Amravati, Maharashtra.
           I love building web applications and solving problems using technology.
         </p>
-        <div className="flex gap-4">
+        <div className="flex flex-col w-full gap-4">
           <InteractiveHoverButton 
             text="Get in touch"
             onClick={() => jumpToSection('contact')}
-            className="text-blue-900 dark:text-blue-100 border-blue-200 dark:border-blue-800 text-sm md:text-lg font-semibold w-32 md:w-40 backdrop-blur-sm hover:bg-blue-50 dark:hover:bg-blue-900/20"
+            className="text-blue-900 dark:text-blue-100 border-blue-200 dark:border-blue-800 text-base font-semibold w-full backdrop-blur-sm hover:bg-blue-50 dark:hover:bg-blue-900/20 px-6 py-3"
           />
           <InteractiveHoverButton 
             text="Get Resume"
-            className="text-blue-900 dark:text-blue-100 border-blue-200 dark:border-blue-800 text-sm md:text-lg font-semibold w-32 md:w-40 backdrop-blur-sm hover:bg-blue-50 dark:hover:bg-blue-900/20"
+            className="text-blue-900 dark:text-blue-100 border-blue-200 dark:border-blue-800 text-base font-semibold w-full backdrop-blur-sm hover:bg-blue-50 dark:hover:bg-blue-900/20 px-6 py-3"
           />
         </div>
       </div>

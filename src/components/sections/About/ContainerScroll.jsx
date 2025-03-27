@@ -20,8 +20,8 @@ export const ContainerScroll = ({ titleComponent, children }) => {
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: isMobile 
-      ? ["start 95%", "end 20%"]  // Early trigger for mobile
-      : ["start 60%", "center center"]  // Adjusted laptop trigger points
+      ? ["start 80%", "center 20%"]  // Start animation earlier on mobile (at 80% from bottom of viewport)
+      : ["start 60%", "center center"]  // Keep original timing for laptop
   });
 
   const scaleDimensions = () => {

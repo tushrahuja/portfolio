@@ -15,13 +15,13 @@ const EducationExperience = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
             <h3 className="text-2xl md:text-4xl font-bold text-blue-900 dark:text-blue-100 mb-6 text-left pl-4 md:pl-0">
-              Education
+            &lt; Education /&gt;
             </h3>
             <EducationTimeline />
           </div>
           <div>
             <h3 className="text-2xl md:text-4xl font-bold text-blue-900 dark:text-blue-100 mb-6 text-left pl-4 md:pl-0">
-              Experience
+            &lt; Experience /&gt;
             </h3>
             <ExperienceTimeline />
           </div>

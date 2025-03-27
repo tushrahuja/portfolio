@@ -34,10 +34,10 @@ const transitionOverlay = { duration: 0.5, ease: [0.32, 0.72, 0, 1] }
 const SkillCard = ({ title, items }) => (
   <motion.div
     className="bg-blue-50/90 dark:bg-[#0A1021]/90 backdrop-blur-sm rounded-xl 
-               p-4 lg:p-8 w-[280px] sm:w-[300px] lg:w-[800px]
+               p-4 lg:p-8 w-[300px] sm:w-[320px] lg:w-[800px]
                border border-blue-200 dark:border-blue-800 hover:border-blue-400 dark:hover:border-blue-600"
   >
-    <h3 className="text-xl sm:text-2xl lg:text-4xl font-bold mb-4 lg:mb-8 text-blue-900 dark:text-blue-100">
+    <h3 className="text-xl sm:text-2xl lg:text-4xl font-bold mb-2 sm:mb-4 lg:mb-8 text-blue-900 dark:text-blue-100">
       {title}
     </h3>
     <div className="flex flex-wrap gap-2 lg:gap-5">
@@ -66,6 +66,7 @@ const Carousel = memo(
     const [currentIndex, setCurrentIndex] = useState(0);
     const [direction, setDirection] = useState(1);
     const autoRotateInterval = useRef(null);
+    const isMobile = useMediaQuery("(max-width: 768px)");
 
     // Auto-rotate function
     const startAutoRotate = () => {
@@ -129,19 +130,25 @@ const Carousel = memo(
 
     return (
       <div 
-        className="flex h-full items-center justify-center overflow-hidden"
+        className={`flex h-full items-center justify-center overflow-hidden ${
+          isMobile ? "gap-0" : "gap-8" // Removed gap for mobile view
+        }`}
         onMouseEnter={handleInteractionStart}
         onMouseLeave={handleInteractionEnd}
         onTouchStart={handleInteractionStart}
         onTouchEnd={handleInteractionEnd}
       >
-        <button
-          onClick={handleLeftClick}
-          className="absolute left-0 md:left-2 z-10 p-1 md:p-2 bg-white dark:bg-gray-800 text-blue-900 dark:text-blue-100 rounded-full shadow-md scale-75 md:scale-100 -translate-x-1 md:translate-x-0"
-        >
-          <ArrowLeft className="w-4 h-4 md:w-5 md:h-5" />
-        </button>
-        <div className="relative w-[800px] h-[500px]">
+        {/* Only show navigation arrows on non-mobile devices */}
+        {!isMobile && (
+          <button
+            onClick={handleLeftClick}
+            className="absolute left-0 md:left-2 z-10 p-1 md:p-2 bg-white dark:bg-gray-800 text-blue-900 dark:text-blue-100 rounded-full shadow-md scale-75 md:scale-100 -translate-x-1 md:translate-x-0"
+          >
+            <ArrowLeft className="w-4 h-4 md:w-5 md:h-5" />
+          </button>
+        )}
+        
+        <div className={`relative w-[320px] md:w-[800px] ${isMobile ? "h-[480px]" : "h-[520px]"}`}>
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={currentIndex}
@@ -165,13 +172,18 @@ const Carousel = memo(
             </motion.div>
           </AnimatePresence>
         </div>
-        <button
-          onClick={handleRightClick}
-          className="absolute right-0 md:right-2 z-10 p-1 md:p-2 bg-white dark:bg-gray-800 text-blue-900 dark:text-blue-100 rounded-full shadow-md scale-75 md:scale-100 translate-x-1 md:translate-x-0"
-        >
-          <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
-        </button>
-        <div className="absolute bottom-0 left-0 right-0 flex justify-center gap-3 pb-8">
+        
+        {/* Only show navigation arrows on non-mobile devices */}
+        {!isMobile && (
+          <button
+            onClick={handleRightClick}
+            className="absolute right-0 md:right-2 z-10 p-1 md:p-2 bg-white dark:bg-gray-800 text-blue-900 dark:text-blue-100 rounded-full shadow-md scale-75 md:scale-100 translate-x-1 md:translate-x-0"
+          >
+            <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
+          </button>
+        )}
+        
+        <div className="absolute bottom-4 md:bottom-0 left-0 right-0 flex justify-center gap-3 pb-4 md:pb-8">
           {sections.map((_, index) => (
             <button
               key={index}
@@ -221,8 +233,8 @@ export function SkillsCarousel({ skillSections }) {
   const isMobile = useMediaQuery("(max-width: 768px)")
 
   return (
-    <motion.div layout className={`relative ${isMobile ? '-mt-20' : '-mt-8'}`}>
-      <div className="relative h-[500px] w-full">
+    <motion.div layout className={`relative ${isMobile ? '-mt-4' : '-mt-8'}`}>
+      <div className={`relative ${isMobile ? 'h-[460px]' : 'h-[500px]'} w-full`}>
         <Carousel
           controls={controls}
           sections={sections}

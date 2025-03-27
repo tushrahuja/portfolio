@@ -16,11 +16,11 @@ const Contact = () => {
             </p>
             <div className="flex items-center mb-4">
               <FaEnvelope className="text-blue-900 dark:text-blue-100 mr-3" />
-              <span className="text-lg text-blue-700 dark:text-blue-300">tusharahuja.dev@gmail.com</span>
+              <span className="text-sm md:text-lg text-blue-700 dark:text-blue-300">tusharahuja.dev@gmail.com</span>
             </div>
             <div className="flex items-center">
               <FaMapMarkerAlt className="text-blue-900 dark:text-blue-100 mr-3" />
-              <span className="text-lg text-blue-700 dark:text-blue-300">Amravati, Maharashtra, India</span>
+              <span className="text-sm md:text-lg text-blue-700 dark:text-blue-300">Amravati, Maharashtra, India</span>
             </div>
           </div>
           <ContactForm />
