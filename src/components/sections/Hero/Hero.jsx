@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { InteractiveHoverButton } from "../../ui/Button";
 import { words } from "../../../data";
-import pfp from "/src/images/pfp3.jpg"
 
 const HeroSection = () => {
   const [text, setText] = useState("");
@@ -62,7 +61,7 @@ const HeroSection = () => {
         </h1>
         <div className="w-48 h-48 rounded-full border-4 border-blue-900 dark:border-blue-100 mb-6">
           <img
-            src={pfp}
+            src="/images/pfp3.jpg"
             alt="Tushar Ahuja"
             className="w-full h-full object-cover rounded-full"
           />
@@ -115,7 +114,7 @@ const HeroSection = () => {
           </div>
         </div>
         <div className="w-96 h-96 rounded-full overflow-hidden border-4 border-blue-900 dark:border-blue-100 -ml-16 -mt-12">
-          <img src={pfp} alt="Tushar Ahuja" className="w-full h-full object-cover" />
+          <img src="/images/pfp3.jpg" alt="Tushar Ahuja" className="w-full h-full object-cover" />
         </div>
       </div>
     </motion.div>

@@ -16,7 +16,7 @@ export const projects = [
   {
     title: "ExpenseTrade",
     description: "A financial management platform that tracks expenses, manages income, and suggests personalized stocks. Features expense tracking, data visualization, and secure authentication.",
-    image: "/src/images/projects_screenshots/expensetrade.png",
+    image: "/images/projects_screenshots/expensetrade.png", // Updated path
     tags: ["Python", "Streamlit", "Data Visualization"],
     liveDemo: "https://expensetrade.streamlit.app/",
     github: "https://github.com/tushrahuja/ExpenseTrade"
@@ -24,7 +24,7 @@ export const projects = [
   {
     title: "Portfolio Website",
     description: "A personal portfolio website template that showcases projects, skills, and certifications. Features include a dark mode toggle, smooth scroll, and interactive animations.",
-    image: "/src/projects_screenshots/sampleproject.jpg",
+    image: "", // Updated path
     tags: ["React.js", "Tailwind CSS", "Framer Motion"],
     liveDemo: "#",
     github: "#"
@@ -89,7 +89,7 @@ export const certifications = [
     title: "SQL Certificate",
     issuer: "HackerRank",
     date: "Mar 2025",
-    image: "/src/images/certificates/sql_hackerrank.jpg",
+    image: "/images/certificates/sql_hackerrank.jpg", // Updated path
     url: "",
     description: "Accomplished a assessment on SQL, testing knowledge of database queries."
   },
@@ -97,7 +97,7 @@ export const certifications = [
     title: "React.js Certificate",
     issuer: "Infosys Springboard",
     date: "Mar 2025",
-    image: "/src/images/certificates/reactjs.jpg",
+    image: "/images/certificates/reactjs.jpg", // Updated path
     url: "",
     description: "Completed a course on React.js, learning about frontend development."
   },
@@ -105,7 +105,7 @@ export const certifications = [
     title: ".Net Conference",
     issuer: "Microsoft Learn Student Club",
     date: "Jan 2025",
-    image: "/src/images/certificates/dotnet.png",
+    image: "/images/certificates/dotnet.png", // Updated path
     url: "",
     description: "Participated in the .Net Conference, learning about the latest technologies."
   },
@@ -113,7 +113,7 @@ export const certifications = [
     title: "DBMS Certificate",
     issuer: "NPTEL",
     date: "Nov 2024",
-    image: "/src/images/certificates/dbms_nptel.jpeg",
+    image: "/images/certificates/dbms_nptel.jpeg", // Updated path
     url: "https://onlinecourses.swayam2.ac.in/ini24_cs01/certificate?q=gNdih1l4meksCtDATMXw9QNMsav6VjM0QEbIKlh9Pm%2B/D4lThAeII/bw3FFC5lAI",
     description: "Completed a comprehensive course on Database Management Systems."
   },
@@ -121,7 +121,7 @@ export const certifications = [
     title: "Codethon 2024",
     issuer: "Coding Club PRPCEM",
     date: "Oct 2024",
-    image: "/src/images/certificates/codethon.jpg",
+    image: "/images/certificates/codethon.jpg", // Updated path
     url: "",
     description: "Participated in Codethon 2024, showcasing coding skills and problem-solving abilities."
   },
@@ -129,7 +129,7 @@ export const certifications = [
     title: "MongoDB Course",
     issuer: "GeeksforGeeks",
     date: "Sep 2024",
-    image: "/src/images/certificates/mongodb_gfg.jpeg",
+    image: "/images/certificates/mongodb_gfg.jpeg", // Updated path
     url: "https://media.geeksforgeeks.org/courses/certificates/c1ab6f20fe6c1c56a773eabe6b3edf59.pdf",
     description: "Completed a course on MongoDB, learning about NoSQL databases."
   }
