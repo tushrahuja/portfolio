@@ -45,7 +45,7 @@ const EducationTimeline = () => {
                     2023-2026 | Amravati, Maharashtra
                   </p>
                   <p className="text-md text-blue-700 dark:text-blue-300 mt-1">
-                    DSA, AI, Web Development, OOP, Networking, DBMS
+                    Relevant courses included DSA, AI, Web Development, OOP, Networking, DBMS
                   </p>
                 </div>
               </div>
@@ -63,7 +63,7 @@ const EducationTimeline = () => {
                     2021-2023 | Amravati, Maharashtra
                   </p>
                   <p className="text-md text-blue-700 dark:text-blue-300 mt-1">
-                    Microcontrollers, IoT, Embedded Systems, Networks
+                  Relevant courses included Microcontrollers, IoT, Embedded Systems, Networks
                   </p>
                 </div>
               </div>
