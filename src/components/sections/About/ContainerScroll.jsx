@@ -38,12 +38,12 @@ export const ContainerScroll = ({ titleComponent, children }) => {
 
   return (
     <div
-      className="h-[45rem] md:h-[65rem] flex flex-col items-center justify-center relative p-0 pt-20 md:p-10" // Added pt-20 for mobile only
+      className="h-[45rem] md:h-[80rem] flex flex-col items-center justify-center relative p-0" // Removed pt-20 to eliminate extra space
       ref={containerRef}
     >
       <Header translate={translate} titleComponent={titleComponent} />
       <div
-        className="w-full relative flex items-center justify-center -mt-16 md:-mt-20"
+        className="w-full relative flex items-center justify-center"
         style={{
           perspective: "1000px",
         }}
@@ -78,9 +78,9 @@ export const Card = ({ rotate, scale, translate, children }) => {
         boxShadow:
           "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
       }}
-      className="max-w-5xl -mt-12 mx-auto h-[35rem] md:h-[40rem] w-[98vw] md:w-full border-4 border-black p-1 md:p-6 bg-[#222222] rounded-[30px] shadow-2xl" // Increased mobile height
+      className="max-w-5xl mx-auto h-[35rem] md:h-[60rem] w-[98vw] md:w-full border-4 border-black p-1 md:p-6 bg-[#222222] rounded-[30px] shadow-2xl" // Kept borders intact
     >
-      <div className="h-full w-full overflow-hidden rounded-2xl bg-black dark:bg-zinc-900 md:rounded-2xl p-1 md:p-4 border-4 border-lightblue dark:border-gray-600">
+      <div className="h-full w-full overflow-hidden rounded-2xl bg-black dark:bg-zinc-900 border-4 border-lightblue dark:border-gray-600">
         {children}
       </div>
     </motion.div>

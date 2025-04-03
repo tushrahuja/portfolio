@@ -7,13 +7,13 @@ const AboutContent = () => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-    
+
     // Check on initial render
     checkMobile();
-    
+
     // Add event listener for window resize
     window.addEventListener("resize", checkMobile);
-    
+
     // Cleanup
     return () => {
       window.removeEventListener("resize", checkMobile);
@@ -21,15 +21,11 @@ const AboutContent = () => {
   }, []);
 
   return (
-    <div className="w-full h-full flex items-center justify-center">
+    <div className="w-full h-full flex items-center justify-center overflow-hidden">
       <img
-        src={isMobile ? "/images/aboutme2.jpg" : "/images/aboutme.png"}
+        src={isMobile ? "/images/aboutme2.jpg" : "/images/aboutme.jpg"}
         alt="About Me"
-        className={`w-full h-full rounded-xl ${
-          isMobile 
-            ? "object-cover scale-105 transform" // Reduced from scale-110 to scale-105
-            : "object-cover transform md:rotate-0 md:scale-100"
-        }`}
+        className="w-full h-full object-cover transform scale-96" // Slight zoom out with scale-96
         draggable={false}
       />
     </div>
