@@ -27,7 +27,7 @@ const AboutContent = () => {
         alt="About Me"
         className={`w-full h-full rounded-xl ${
           isMobile 
-            ? "object-cover scale-110 transform" // Reduced from scale-125 to scale-110
+            ? "object-cover scale-105 transform" // Reduced from scale-110 to scale-105
             : "object-cover transform md:rotate-0 md:scale-100"
         }`}
         draggable={false}
