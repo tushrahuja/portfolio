@@ -2,18 +2,23 @@ import React from 'react';
 export const AboutSection = () => {
   return (
     <div className="container mx-auto p-4 md:p-20">
-      <h1 className="text-lg md:text-4xl font-semibold">About Me</h1>
+      <h1 className="text-lg md:text-4xl">About Me</h1>
       <p className="text-[10px] md:text-base text-center">
-        Hey there! I'm Tushar Ahuja, a Full Stack Developer and Computer Science Engineering student
-        based in Amravati, Maharashtra. 
+        Hey there! I'm Tushar Ahuja, a passionate Full Stack Developer and Computer Science Engineering 
+        student based in Amravati, Maharashtra. 
+        I specialize in building responsive, user-friendly web applications with modern technologies.
       </p>
       <p className="text-[10px] md:text-base text-center">
-        I have experience working with technologies like React.js, Node.js, and Express.js. I am always learning and exploring new tools and technologies to build better software. I am also
-        proficient in databases like MySQL and MongoDB. I solve problems using technology and love to work on challenging projects. 
+        My expertise spans the entire development stack - from crafting intuitive frontends with React.js 
+        and modern CSS frameworks to building robust backends with Node.js and Express.js. 
+        I'm proficient in both SQL (MySQL) and NoSQL (MongoDB) database systems, enabling me to design 
+        efficient data architectures for various application needs. 
+        I'm constantly exploring emerging technologies and frameworks to stay at the cutting edge of web 
+        development.
       </p>
       <p className="text-[10px] md:text-base text-center">
-        Beyond coding, I take pride in my professional skills such as time management
-        and team collaboration, which help me thrive in fast-paced development environments.
+        Beyond technical skills, I excel in problem-solving, communicate effectively with stakeholders, 
+        and thrive in collaborative environments.
       </p>
     </div>
   );

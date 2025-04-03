@@ -2,7 +2,12 @@ import React from "react";
 import { Sun, Moon } from "lucide-react";
 
 export function ThemeToggle() {
-  const [theme, setTheme] = React.useState("dark");
+  const [theme, setTheme] = React.useState(() => {
+    // Check localStorage first
+    const savedTheme = localStorage.getItem("theme");
+    // Return saved theme or default to "dark"
+    return savedTheme || "dark";
+  });
 
   React.useEffect(() => {
     const root = window.document.documentElement;
@@ -11,6 +16,8 @@ export function ThemeToggle() {
     } else {
       root.classList.remove("dark");
     }
+    // Save to localStorage whenever theme changes
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   return (
