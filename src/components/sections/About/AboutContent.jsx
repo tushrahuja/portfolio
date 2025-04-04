@@ -25,7 +25,7 @@ const AboutContent = () => {
       <img
         src={isMobile ? "/images/aboutme2.jpg" : "/images/aboutme.jpg"}
         alt="About Me"
-        className={`w-full h-full object-fill ${isMobile ? 'scale-110' : 'scale-100'}`}
+        className={`w-full h-full ${isMobile ? 'object-fill scale-110' : 'object-cover scale-100'}`}
         draggable={false}
       />
     </div>

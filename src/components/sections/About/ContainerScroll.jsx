@@ -7,9 +7,6 @@ export const ContainerScroll = ({
   children
 }) => {
   const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-  });
   const [isMobile, setIsMobile] = React.useState(false);
 
   React.useEffect(() => {
@@ -27,6 +24,13 @@ export const ContainerScroll = ({
     return isMobile ? [0.7, 0.9] : [1.05, 1];
   };
 
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: isMobile 
+      ? ["start 90%", "center 30%"]  // Adjusted animation trigger points
+      : ["start 60%", "center center"]
+  });
+
   const rotate = useTransform(scrollYProgress, [0, 1], [20, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
   const translate = useTransform(scrollYProgress, [0, 1], [0, -100]);
@@ -41,7 +45,7 @@ export const ContainerScroll = ({
 
   return (
     <div
-      className={`${isMobile ? 'h-[50rem] -mt-6' : 'h-[100rem]'} flex items-center justify-center relative p-0 w-full`} // Adjusted negative margin for mobile
+      className={`${isMobile ? 'h-[50rem] mt-8' : 'h-[100rem]'} flex items-center justify-center relative p-0 w-full`}
       ref={containerRef}
     >
       <div
@@ -87,7 +91,11 @@ export const Card = ({
         scale,
         boxShadow: shadowOpacity, // Use dynamic shadow
       }}
-      className={`max-w-5xl mx-auto ${isMobile ? 'h-[40rem] w-[100%] px-2' : 'h-[60rem] w-full p-6'} border-4 border-black bg-[#222222] rounded-[30px] shadow-2xl`}
+      className={`${
+        isMobile 
+          ? 'h-[40rem] w-[88vw] px-2 mx-[6vw]' // Reduced from 94vw to 88vw
+          : 'h-[60rem] w-[85%] p-6 mx-auto' // Added w-[85%] instead of w-full
+      } border-4 border-black bg-[#222222] rounded-[30px] shadow-2xl`}
     >
       <div className="h-full w-full overflow-hidden rounded-2xl bg-black dark:bg-zinc-900 border-4 border-lightblue dark:border-gray-600">
         {children}
