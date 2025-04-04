@@ -23,9 +23,13 @@ const AboutContent = () => {
   return (
     <div className="w-full h-full flex items-center justify-center">
       <img
-        src={isMobile ? "/images/aboutme2.jpg" : "/images/aboutme.jpg"}
+        src={isMobile ? "/images/aboutme2.jpg" : "/images/aboutme.png"}
         alt="About Me"
-        className={`w-full h-full ${isMobile ? 'object-fill scale-110' : 'object-cover scale-100'}`}
+        className={`w-full h-full ${
+          isMobile 
+            ? 'object-fill scale-110'
+            : 'object-contain scale-120' // Slightly reduced from scale-125 to scale-120
+        }`}
         draggable={false}
       />
     </div>

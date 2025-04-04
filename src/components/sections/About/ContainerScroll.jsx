@@ -28,7 +28,7 @@ export const ContainerScroll = ({
     target: containerRef,
     offset: isMobile 
       ? ["start 90%", "center 30%"]  // Adjusted animation trigger points
-      : ["start 60%", "center center"]
+      : ["start 20%", "center 80%"]  // Changed from [40%, 70%] to [20%, 80%] for longer animation
   });
 
   const rotate = useTransform(scrollYProgress, [0, 1], [20, 0]);
@@ -45,7 +45,7 @@ export const ContainerScroll = ({
 
   return (
     <div
-      className={`${isMobile ? 'h-[50rem] mt-8' : 'h-[100rem]'} flex items-center justify-center relative p-0 w-full`}
+      className={`${isMobile ? 'h-[50rem] mt-8' : 'h-[80rem]'} flex items-center justify-center relative p-0 w-full`} // Reduced height for desktop
       ref={containerRef}
     >
       <div
@@ -94,7 +94,7 @@ export const Card = ({
       className={`${
         isMobile 
           ? 'h-[40rem] w-[88vw] px-2 mx-[6vw]' // Reduced from 94vw to 88vw
-          : 'h-[60rem] w-[85%] p-6 mx-auto' // Added w-[85%] instead of w-full
+          : 'h-[45rem] w-[85%] p-4 mx-auto' // Reduced height from 60rem to 45rem and padding from p-6 to p-4
       } border-4 border-black bg-[#222222] rounded-[30px] shadow-2xl`}
     >
       <div className="h-full w-full overflow-hidden rounded-2xl bg-black dark:bg-zinc-900 border-4 border-lightblue dark:border-gray-600">
