@@ -2,8 +2,14 @@
 import React, { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 
-export const ContainerScroll = ({ titleComponent, children }) => {
+export const ContainerScroll = ({
+  titleComponent,
+  children
+}) => {
   const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+  });
   const [isMobile, setIsMobile] = React.useState(false);
 
   React.useEffect(() => {
@@ -17,38 +23,35 @@ export const ContainerScroll = ({ titleComponent, children }) => {
     };
   }, []);
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: isMobile 
-      ? ["start 80%", "center 20%"]  // Start animation earlier on mobile (at 80% from bottom of viewport)
-      : ["start 60%", "center center"]  // Keep original timing for laptop
-  });
-
   const scaleDimensions = () => {
-    return isMobile ? [0.8, 1] : [1.05, 1];
+    return isMobile ? [0.7, 0.9] : [1.05, 1];
   };
 
-  const rotate = useTransform(
-    scrollYProgress, 
-    [0, 1], 
-    isMobile ? [40, 0] : [30, 0]  // Increased initial rotation for laptop
-  );
+  const rotate = useTransform(scrollYProgress, [0, 1], [20, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
   const translate = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  
+  // Add shadow transform
+  const shadowOpacity = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ['0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003',
+     '0 0 #0000002d, 0 4px 10px #0000002a, 0 15px 15px #00000022, 0 35px 25px #00000016, 0 60px 30px #0000000a, 0 95px 35px #00000003']
+  );
 
   return (
     <div
-      className="h-[45rem] md:h-[80rem] flex flex-col items-center justify-center relative p-0" // Removed pt-20 to eliminate extra space
+      className={`${isMobile ? 'h-[50rem] -mt-6' : 'h-[100rem]'} flex items-center justify-center relative p-0 w-full`} // Adjusted negative margin for mobile
       ref={containerRef}
     >
-      <Header translate={translate} titleComponent={titleComponent} />
       <div
-        className="w-full relative flex items-center justify-center"
+        className="py-0 w-full relative flex flex-col items-center justify-center"
         style={{
           perspective: "1000px",
         }}
       >
-        <Card rotate={rotate} translate={translate} scale={scale}>
+        <Header translate={translate} titleComponent={titleComponent} />
+        <Card rotate={rotate} translate={translate} scale={scale} shadowOpacity={shadowOpacity} isMobile={isMobile}>
           {children}
         </Card>
       </div>
@@ -62,23 +65,29 @@ export const Header = ({ translate, titleComponent }) => {
       style={{
         translateY: translate,
       }}
-      className="div max-w-5xl mx-auto text-center"
+      className="div max-w-5xl mx-auto text-center mb-0" // Removed all margin
     >
       {titleComponent}
     </motion.div>
   );
 };
 
-export const Card = ({ rotate, scale, translate, children }) => {
+export const Card = ({
+  rotate,
+  scale,
+  translate,
+  children,
+  isMobile,
+  shadowOpacity
+}) => {
   return (
     <motion.div
       style={{
         rotateX: rotate,
         scale,
-        boxShadow:
-          "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
+        boxShadow: shadowOpacity, // Use dynamic shadow
       }}
-      className="max-w-5xl mx-auto h-[35rem] md:h-[60rem] w-[98vw] md:w-full border-4 border-black p-1 md:p-6 bg-[#222222] rounded-[30px] shadow-2xl" // Kept borders intact
+      className={`max-w-5xl mx-auto ${isMobile ? 'h-[40rem] w-[100%] px-2' : 'h-[60rem] w-full p-6'} border-4 border-black bg-[#222222] rounded-[30px] shadow-2xl`}
     >
       <div className="h-full w-full overflow-hidden rounded-2xl bg-black dark:bg-zinc-900 border-4 border-lightblue dark:border-gray-600">
         {children}

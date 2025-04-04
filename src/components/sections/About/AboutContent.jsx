@@ -21,11 +21,11 @@ const AboutContent = () => {
   }, []);
 
   return (
-    <div className="w-full h-full flex items-center justify-center overflow-hidden">
+    <div className="w-full h-full flex items-center justify-center">
       <img
         src={isMobile ? "/images/aboutme2.jpg" : "/images/aboutme.jpg"}
         alt="About Me"
-        className="w-full h-full object-cover transform scale-96" // Slight zoom out with scale-96
+        className={`w-full h-full object-fill ${isMobile ? 'scale-110' : 'scale-100'}`}
         draggable={false}
       />
     </div>
