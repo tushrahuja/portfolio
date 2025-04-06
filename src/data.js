@@ -1,5 +1,5 @@
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaJava, FaPython, FaReact, FaBootstrap, FaGitAlt, FaCloud, FaNodeJs } from "react-icons/fa";
-import { SiTailwindcss, SiFramer, SiVite, SiDjango, SiMysql, SiMongodb, SiExpress } from "react-icons/si";
+import { SiTailwindcss, SiFramer, SiVite, SiDjango, SiMysql, SiMongodb, SiExpress, SiPostman, SiSocketdotio, SiRedis } from "react-icons/si";
 import { GiPuzzle } from "react-icons/gi";
 import { BsPeopleFill, BsClockFill } from "react-icons/bs";
 
@@ -57,21 +57,24 @@ export const skillSections = {
     items: [
       { name: "Django", icon: SiDjango, color: "#092E20" },
       { name: "Node.js", icon: FaNodeJs, color: "#339933" },
-      { name: "Express.js", icon: SiExpress, color: "#000000" }
+      { name: "Express.js", icon: SiExpress, color: "#000000" },
+      { name: "Socket.io", icon: SiSocketdotio, color: "#010101" }
     ]
   },
   database: {
     title: "Databases",
     items: [
       { name: "MySQL", icon: SiMysql, color: "#4479A1" },
-      { name: "MongoDB", icon: SiMongodb, color: "#47A248" }
+      { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+      { name: "Redis", icon: SiRedis, color: "#DC382D" }
     ]
   },
   tools: {
     title: "Tools & Technologies",
     items: [
       { name: "Git", icon: FaGitAlt, color: "#F05032" },
-      { name: "Clever Cloud", icon: FaCloud, color: "#1A82FF" }
+      { name: "Clever Cloud", icon: FaCloud, color: "#1A82FF" },
+      { name: "Postman", icon: SiPostman, color: "#FF6C37" }
     ]
   },
   profSkills: {

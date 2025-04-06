@@ -37,19 +37,19 @@ const SkillCard = ({ title, items }) => (
                p-4 lg:p-8 w-[300px] sm:w-[320px] lg:w-[800px]
                border border-blue-200 dark:border-blue-800 hover:border-blue-400 dark:hover:border-blue-600"
   >
-    <h3 className="text-xl sm:text-2xl lg:text-4xl font-bold mb-2 sm:mb-4 lg:mb-8 text-blue-900 dark:text-blue-100">
+    <h3 className="text-xl sm:text-2xl lg:text-4xl font-bold mb-3 sm:mb-5 lg:mb-8 text-blue-900 dark:text-blue-100">
       {title}
     </h3>
-    <div className="flex flex-wrap gap-2 lg:gap-5">
+    <div className="flex flex-wrap gap-3 lg:gap-5">
       {items.map((item) => (
         <div 
           key={item.name} 
-          className="flex items-center gap-2 lg:gap-4 p-2 lg:p-4 
+          className="flex items-center gap-2 lg:gap-4 p-3 lg:p-4 
                      bg-white/80 dark:bg-[#1E293B]/50 
                      border border-blue-100 dark:border-[#1E293B]/50 
                      rounded-lg hover:border-blue-300 dark:hover:border-blue-500/30"
         >
-          <item.icon className="w-5 h-5 lg:w-8 lg:h-8" style={{ color: item.color }} />
+          <item.icon className="w-6 h-6 lg:w-8 lg:h-8" style={{ color: item.color }} />
           <span className="text-sm lg:text-xl text-blue-900 dark:text-blue-100">{item.name}</span>
         </div>
       ))}
@@ -148,7 +148,7 @@ const Carousel = memo(
           </button>
         )}
         
-        <div className={`relative w-[320px] md:w-[800px] ${isMobile ? "h-[480px]" : "h-[520px]"}`}>
+        <div className={`relative w-[320px] md:w-[800px] ${isMobile ? "h-[520px]" : "h-[520px]"}`}>
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={currentIndex}
@@ -234,7 +234,7 @@ export function SkillsCarousel({ skillSections }) {
 
   return (
     <motion.div layout className={`relative ${isMobile ? '-mt-4' : '-mt-8'}`}>
-      <div className={`relative ${isMobile ? 'h-[460px]' : 'h-[500px]'} w-full`}>
+      <div className={`relative ${isMobile ? 'h-[580px]' : 'h-[500px]'} w-full`}>
         <Carousel
           controls={controls}
           sections={sections}
