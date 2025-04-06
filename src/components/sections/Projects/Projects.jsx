@@ -6,6 +6,18 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 const Projects = () => {
   const [currentProject, setCurrentProject] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -130,14 +142,35 @@ const Projects = () => {
             </motion.div>
           </AnimatePresence>
 
-          <button
-            onClick={handleNextProject}
-            className="absolute right-[-3rem] top-1/2 -translate-y-1/2 z-10 p-2 bg-white dark:bg-gray-800 text-blue-900 dark:text-blue-100 rounded-full shadow-md hidden sm:block"
-          >
-            <ArrowRight className="w-5 h-5" />
-          </button>
+          {/* Desktop arrows */}
+          {!isMobile && (
+            <button
+              onClick={handleNextProject}
+              className="absolute right-[-3rem] top-1/2 -translate-y-1/2 z-10 p-2 bg-white dark:bg-gray-800 text-blue-900 dark:text-blue-100 rounded-full shadow-md hidden sm:block"
+            >
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          )}
 
-          <div className="absolute -bottom-12 left-0 right-0 flex justify-center gap-3">
+          {/* Mobile navigation arrows (replacing dots) */}
+          <div className="sm:hidden absolute bottom-[-3rem] left-0 right-0 flex justify-center items-center gap-8">
+            <button
+              onClick={handlePrevProject}
+              className="p-2 bg-white dark:bg-gray-800 text-blue-900 dark:text-blue-100 rounded-full shadow-md"
+            >
+              <ArrowLeft className="w-4 h-4" />
+            </button>
+            
+            <button
+              onClick={handleNextProject}
+              className="p-2 bg-white dark:bg-gray-800 text-blue-900 dark:text-blue-100 rounded-full shadow-md"
+            >
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* Desktop dot indicators (hidden on mobile) */}
+          <div className="absolute -bottom-12 left-0 right-0 hidden sm:flex justify-center gap-3">
             {projects.map((_, index) => (
               <button
                 key={index}
