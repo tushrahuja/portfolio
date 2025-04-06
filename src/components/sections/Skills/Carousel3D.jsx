@@ -142,7 +142,7 @@ const Carousel = memo(
         {!isMobile && (
           <button
             onClick={handleLeftClick}
-            className="absolute left-0 md:left-2 z-10 p-1 md:p-2 bg-white dark:bg-gray-800 text-blue-900 dark:text-blue-100 rounded-full shadow-md scale-75 md:scale-100 -translate-x-1 md:translate-x-0"
+            className="absolute left-0 md:left-2 z-10 p-1 md:p-2 bg-white dark:bg-gray-800 text-gray-500 dark:text-blue-100 rounded-full shadow-md scale-75 md:scale-100 -translate-x-1 md:translate-x-0 hover:bg-blue-50 dark:hover:bg-gray-700"
           >
             <ArrowLeft className="w-4 h-4 md:w-5 md:h-5" />
           </button>
@@ -177,7 +177,7 @@ const Carousel = memo(
         {!isMobile && (
           <button
             onClick={handleRightClick}
-            className="absolute right-0 md:right-2 z-10 p-1 md:p-2 bg-white dark:bg-gray-800 text-blue-900 dark:text-blue-100 rounded-full shadow-md scale-75 md:scale-100 translate-x-1 md:translate-x-0"
+            className="absolute right-0 md:right-2 z-10 p-1 md:p-2 bg-white dark:bg-gray-800 text-gray-500 dark:text-blue-100 rounded-full shadow-md scale-75 md:scale-100 translate-x-1 md:translate-x-0 hover:bg-blue-50 dark:hover:bg-gray-700"
           >
             <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
           </button>

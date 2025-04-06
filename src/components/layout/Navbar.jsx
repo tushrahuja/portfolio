@@ -36,28 +36,33 @@ export function Navbar({ activeSection }) {
     <div className="fixed top-2 right-8 z-[100] mt-8">
       {/* Mobile Menu */}
       <div className="md:hidden">
-        <button
+        <motion.button
           onClick={() => setIsOpen(!isOpen)}
           className="p-2 bg-background/5 border border-blue-200 dark:border-blue-800 backdrop-blur-lg rounded-full"
+          whileTap={{ scale: 0.95 }}
         >
           <Menu className="h-6 w-6 text-blue-900 dark:text-blue-100" />
-        </button>
+        </motion.button>
 
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="absolute right-0 mt-2 py-2 w-48 bg-white/10 border border-blue-200 dark:border-blue-800 backdrop-blur-lg rounded-xl"
+              initial={{ opacity: 0, y: -20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -20, scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+              className="absolute right-0 mt-2 py-2 w-48 bg-white/10 border border-blue-200 dark:border-blue-800 backdrop-blur-lg rounded-xl shadow-lg"
             >
-              {items.map((item) => {
+              {items.map((item, index) => {
                 const Icon = item.icon;
                 const isActive = activeSection === item.name;
                 return (
-                  <button
+                  <motion.button
                     key={item.name}
                     onClick={() => handleClick(item.name, item.url)}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1, duration: 0.2 }}
                     className={cn(
                       "flex items-center w-full px-4 py-2 text-left",
                       "text-blue-900 dark:text-blue-100 hover:bg-blue-50/50 dark:hover:bg-blue-900/20",
@@ -66,7 +71,7 @@ export function Navbar({ activeSection }) {
                   >
                     <Icon className="w-5 h-5 mr-2" />
                     {item.name}
-                  </button>
+                  </motion.button>
                 );
               })}
             </motion.div>
@@ -75,13 +80,18 @@ export function Navbar({ activeSection }) {
       </div>
 
       {/* Desktop Menu with Tubelight Effect */}
-      <div className="hidden md:flex items-center gap-3 bg-background/5 border border-blue-200 dark:border-blue-800 backdrop-blur-lg py-2 px-2 rounded-full shadow-lg">
+      <motion.div 
+        className="hidden md:flex items-center gap-3 bg-background/5 border border-blue-200 dark:border-blue-800 backdrop-blur-lg py-2 px-2 rounded-full shadow-lg"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         {items.map((item) => {
           const Icon = item.icon;
           const isActive = activeSection === item.name;
 
           return (
-            <button
+            <motion.button
               key={item.name}
               onClick={() => handleClick(item.name, item.url)}
               className={cn(
@@ -89,6 +99,8 @@ export function Navbar({ activeSection }) {
                 "text-blue-900 dark:text-blue-100 hover:text-blue-800 dark:hover:text-blue-200",
                 isActive && "bg-blue-50/50 dark:bg-blue-900/20"
               )}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
             >
               <span className="hidden md:inline">{item.name}</span>
               <span className="md:hidden">
@@ -109,17 +121,21 @@ export function Navbar({ activeSection }) {
                     damping: 30,
                   }}
                 >
-                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-blue-500 dark:bg-blue-400 rounded-t-full">
+                  <motion.div 
+                    className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-blue-500 dark:bg-blue-400 rounded-t-full"
+                    animate={{ opacity: [0.5, 1, 0.5], scale: [1, 1.1, 1] }}
+                    transition={{ repeat: Infinity, duration: 2 }}
+                  >
                     <div className="absolute w-12 h-6 bg-blue-500/20 dark:bg-blue-400/20 rounded-full blur-md -top-2 -left-2" />
                     <div className="absolute w-8 h-6 bg-blue-500/20 dark:bg-blue-400/20 rounded-full blur-md -top-1" />
                     <div className="absolute w-4 h-4 bg-blue-500/20 dark:bg-blue-400/20 rounded-full blur-sm top-0 left-2" />
-                  </div>
+                  </motion.div>
                 </motion.div>
               )}
-            </button>
+            </motion.button>
           );
         })}
-      </div>
+      </motion.div>
     </div>
   );
 }
