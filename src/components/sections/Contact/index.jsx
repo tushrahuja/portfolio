@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <motion.div 
       id="contact" 
-      className="relative w-full pt-8 pb-20" {/* Reduced from py-32 to pt-8 pb-20 */}
+      className="relative w-full pt-8 pb-20"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
