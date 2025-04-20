@@ -234,7 +234,7 @@ export function SkillsCarousel({ skillSections }) {
 
   return (
     <motion.div layout className={`relative ${isMobile ? '-mt-0' : '-mt-8'}`}> {/* Reverted back to original values */}
-      <div className={`relative ${isMobile ? 'h-[320px]' : 'h-[500px]'} w-full`}> {/* Removed added padding */}
+      <div className={`relative ${isMobile ? 'h-[340px]' : 'h-[500px]'} w-full`}> {/* Removed added padding */}
         <Carousel
           controls={controls}
           sections={sections}
