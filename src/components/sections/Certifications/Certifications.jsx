@@ -26,7 +26,7 @@ const Certifications = () => {
   };
 
   return (
-    <section id="certifications" className="py-32">
+    <section id="certifications" className="pt-20 pb-8">
       <motion.div 
         initial="hidden"
         whileInView="visible"

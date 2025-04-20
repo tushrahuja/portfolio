@@ -16,7 +16,7 @@ const Skills = () => {
       viewport={{ once: true, margin: "-50px" }}
     >
       <motion.h2 
-        className="text-[2rem] md:text-6xl font-bold text-blue-900 dark:text-blue-100 mb-1 md:mb-3 whitespace-nowrap"
+        className="text-[2rem] md:text-6xl font-bold text-blue-900 dark:text-blue-100 mb-6 md:mb-8 whitespace-nowrap"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}

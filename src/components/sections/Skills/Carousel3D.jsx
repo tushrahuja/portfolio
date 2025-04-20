@@ -233,8 +233,8 @@ export function SkillsCarousel({ skillSections }) {
   const isMobile = useMediaQuery("(max-width: 768px)")
 
   return (
-    <motion.div layout className={`relative ${isMobile ? '-mt-4' : '-mt-8'}`}>
-      <div className={`relative ${isMobile ? 'h-[580px]' : 'h-[500px]'} w-full`}>
+    <motion.div layout className={`relative ${isMobile ? '-mt-0' : '-mt-8'}`}> {/* Reverted back to original values */}
+      <div className={`relative ${isMobile ? 'h-[350px]' : 'h-[500px]'} w-full`}> {/* Removed added padding */}
         <Carousel
           controls={controls}
           sections={sections}

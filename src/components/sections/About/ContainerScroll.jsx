@@ -45,7 +45,7 @@ export const ContainerScroll = ({
 
   return (
     <div
-      className={`${isMobile ? 'h-[50rem] mt-8' : 'h-[80rem]'} flex items-center justify-center relative p-0 w-full`} // Reduced height for desktop
+      className={`${isMobile ? 'h-[50rem] mt-8' : 'h-[80rem]'} flex items-center justify-center relative p-0 w-full`} // Keep container height and margin
       ref={containerRef}
     >
       <div
@@ -93,8 +93,8 @@ export const Card = ({
       }}
       className={`${
         isMobile 
-          ? 'h-[40rem] w-[88vw] px-2 mx-[6vw]' // Reduced from 94vw to 88vw
-          : 'h-[45rem] w-[85%] p-4 mx-auto' // Reduced height from 60rem to 45rem and padding from p-6 to p-4
+          ? 'h-[40rem] w-[88vw] px-2 mx-[6vw] -mt-20' // Added negative top margin to reduce space
+          : 'h-[45rem] w-[85%] p-4 mx-auto' 
       } border-4 border-black bg-[#222222] rounded-[30px] shadow-2xl`}
     >
       <div className="h-full w-full overflow-hidden rounded-2xl bg-black dark:bg-zinc-900 border-4 border-lightblue dark:border-gray-600">
