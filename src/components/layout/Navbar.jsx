@@ -122,13 +122,13 @@ export function Navbar({ activeSection }) {
                   }}
                 >
                   <motion.div 
-                    className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-blue-500 dark:bg-blue-400 rounded-t-full"
+                    className="absolute -top-2 left-0 right-0 mx-auto w-8 h-1 bg-blue-500 dark:bg-blue-400 rounded-t-full"
                     animate={{ opacity: [0.5, 1, 0.5], scale: [1, 1.1, 1] }}
                     transition={{ repeat: Infinity, duration: 2 }}
                   >
-                    <div className="absolute w-12 h-6 bg-blue-500/20 dark:bg-blue-400/20 rounded-full blur-md -top-2 -left-2" />
-                    <div className="absolute w-8 h-6 bg-blue-500/20 dark:bg-blue-400/20 rounded-full blur-md -top-1" />
-                    <div className="absolute w-4 h-4 bg-blue-500/20 dark:bg-blue-400/20 rounded-full blur-sm top-0 left-2" />
+                    <div className="absolute w-12 h-6 bg-blue-500/20 dark:bg-blue-400/20 rounded-full blur-md -top-2 left-1/2 -translate-x-1/2" />
+                    <div className="absolute w-8 h-6 bg-blue-500/20 dark:bg-blue-400/20 rounded-full blur-md -top-1 left-1/2 -translate-x-1/2" />
+                    <div className="absolute w-4 h-4 bg-blue-500/20 dark:bg-blue-400/20 rounded-full blur-sm top-0 left-1/2 -translate-x-1/2" />
                   </motion.div>
                 </motion.div>
               )}
