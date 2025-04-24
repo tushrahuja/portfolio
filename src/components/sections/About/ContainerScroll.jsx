@@ -28,7 +28,7 @@ export const ContainerScroll = ({
     target: containerRef,
     offset: isMobile 
       ? ["start 90%", "center 30%"]  // Adjusted animation trigger points
-      : ["start 20%", "center 80%"]  // Changed from [40%, 70%] to [20%, 80%] for longer animation
+      : ["start 20%", "center 50%"]  // Changed from [40%, 70%] to [20%, 80%] for longer animation
   });
 
   const rotate = useTransform(scrollYProgress, [0, 1], [20, 0]);
