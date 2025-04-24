@@ -9,7 +9,9 @@ export const words = [
   "Problem Solver",
   "Web Developer",
   "Designer",
-  "Coder"
+  "Coder",
+  "ML Enthusiast",
+  "Innovation Seeker"
 ];
 
 export const projects = [
