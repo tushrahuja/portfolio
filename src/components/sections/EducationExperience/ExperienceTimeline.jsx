@@ -150,12 +150,7 @@ const ExperienceTimeline = () => {
                       {["Python", "Pandas", "SQL", "Data Visualization", "Data Analytics"].map((skill, index) => (
                         <motion.span 
                           key={skill}
-                          className="text-xs bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 px-2 py-1 rounded border border-transparent hover:border-blue-300 dark:hover:border-blue-700"
-                          whileHover={{ 
-                            scale: 1.1, 
-                            backgroundColor: "rgba(219, 234, 254, 0.8)",
-                            boxShadow: "0 4px 6px -1px rgba(59, 130, 246, 0.2)"
-                          }}
+                          className="text-xs bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 px-2 py-1 rounded"
                           initial={{ opacity: 0, y: 20 }}
                           whileInView={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.3, delay: 0.6 + index * 0.1 }}
@@ -298,12 +293,7 @@ const ExperienceTimeline = () => {
                       {["Python", "TensorFlow", "scikit-learn", "Neural Networks", "NLP"].map((skill, index) => (
                         <motion.span 
                           key={skill}
-                          className="text-xs bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 px-2 py-1 rounded border border-transparent hover:border-blue-300 dark:hover:border-blue-700"
-                          whileHover={{ 
-                            scale: 1.1, 
-                            backgroundColor: "rgba(219, 234, 254, 0.8)",
-                            boxShadow: "0 4px 6px -1px rgba(59, 130, 246, 0.2)"
-                          }}
+                          className="text-xs bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 px-2 py-1 rounded"
                           initial={{ opacity: 0, y: 20 }}
                           whileInView={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.3, delay: 0.8 + index * 0.1 }}
