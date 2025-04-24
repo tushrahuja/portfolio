@@ -4,7 +4,7 @@ import { GiPuzzle } from "react-icons/gi";
 import { BsPeopleFill, BsClockFill } from "react-icons/bs";
 
 export const words = [
-  "Full Stack Developer",
+  "Full Stack Dev",
   "Tech Enthusiast",
   "Problem Solver",
   "Web Developer",
