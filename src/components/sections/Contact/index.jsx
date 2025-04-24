@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <motion.div 
       id="contact" 
-      className="relative w-full pt-8 pb-20"
+      className="relative w-full pt-8 md:pt-32 pb-20" // Increased md:pt-20 to md:pt-32 for more top padding on desktop
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}

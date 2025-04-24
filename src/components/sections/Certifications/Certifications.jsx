@@ -26,7 +26,7 @@ const Certifications = () => {
   };
 
   return (
-    <section id="certifications" className="pt-20 pb-8">
+    <section id="certifications" className="pt-20 pb-8 md:pb-32"> {/* Increased md:pb-20 to md:pb-32 for much more bottom padding on desktop */}
       <motion.div 
         initial="hidden"
         whileInView="visible"
@@ -41,17 +41,14 @@ const Certifications = () => {
           Professional certifications and achievements that demonstrate my commitment to continuous learning.
         </p>
         
-        <div className="flex flex-nowrap overflow-x-auto pb-8 -mx-4 sm:-mx-8 scroll-smooth">
+        {/* Mobile horizontal scroll layout */}
+        <div className="md:hidden flex flex-nowrap overflow-x-auto pb-8 -mx-4 sm:-mx-8 scroll-smooth gap-4">
           {certifications.map((cert, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="group w-64 sm:w-80 flex-none mx-[-1rem] sm:mx-[-0.5rem] first:ml-4 sm:first:ml-8 last:mr-4 sm:last:mr-8 
+              className="group w-64 flex-none mx-2 first:ml-4 last:mr-4 
                        transition-all duration-300 relative"
-              style={{
-                marginRight: index === certifications.length - 1 ? '1rem' : '0',
-                zIndex: certifications.length - index
-              }}
               whileHover={{ 
                 scale: 1.05,
                 transition: { duration: 0.3 }
@@ -68,10 +65,10 @@ const Certifications = () => {
                                 opacity-0 group-hover:opacity-100 transition-opacity duration-300
                                 pointer-events-none group-hover:pointer-events-auto">
                     <div className="text-center p-4 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
-                      <h3 className="text-base md:text-xl font-bold text-white dark:text-black mb-1">{cert.title}</h3>
-                      <p className="text-sm md:text-base font-semibold text-gray-200 dark:text-gray-800 mb-1">{cert.issuer}</p>
-                      <p className="text-xs md:text-sm font-medium text-gray-300 dark:text-gray-700 mb-2">{cert.date}</p>
-                      <p className="text-sm md:text-base font-semibold text-gray-300 dark:text-gray-700">{cert.description}</p>
+                      <h3 className="text-base font-bold text-white dark:text-black mb-1">{cert.title}</h3>
+                      <p className="text-sm font-semibold text-gray-200 dark:text-gray-800 mb-1">{cert.issuer}</p>
+                      <p className="text-xs font-medium text-gray-300 dark:text-gray-700 mb-2">{cert.date}</p>
+                      <p className="text-sm font-semibold text-gray-300 dark:text-gray-700">{cert.description}</p>
                     </div>
                   </div>
                 </div>
@@ -82,6 +79,59 @@ const Certifications = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-2 inline-flex items-center text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200"
+                    whileHover={{ x: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    View
+                    <svg className="w-3 h-3 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </motion.a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+        
+        {/* Desktop layout with exactly 4 cards per row */}
+        <div className="hidden md:grid grid-cols-4 gap-4 pb-8">
+          {certifications.map((cert, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              className="group transition-all duration-300"
+              style={{ zIndex: certifications.length - index }}
+              whileHover={{ 
+                scale: 1.1,
+                zIndex: 50,
+                transition: { duration: 0.3 }
+              }}
+            >
+              <div className="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-lg border-2 border-blue-900 dark:border-blue-300 h-full transform hover:-rotate-2">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={cert.image}
+                    alt={cert.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-blue-900/90 dark:bg-blue-300/90 flex items-center justify-center 
+                                opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                                pointer-events-none group-hover:pointer-events-auto">
+                    <div className="text-center p-3 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                      <h3 className="text-base font-bold text-white dark:text-black mb-1">{cert.title}</h3>
+                      <p className="text-sm font-semibold text-gray-200 dark:text-gray-800 mb-1">{cert.issuer}</p>
+                      <p className="text-xs font-medium text-gray-300 dark:text-gray-700 mb-1">{cert.date}</p>
+                      <p className="text-xs font-semibold text-gray-300 dark:text-gray-700 line-clamp-3">{cert.description}</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="p-2">
+                  <motion.a
+                    href={cert.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-xs text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200"
                     whileHover={{ x: 5 }}
                     transition={{ duration: 0.2 }}
                   >
